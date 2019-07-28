@@ -1,0 +1,41 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Analyser" rel="Chapter" href="Analyser.html">
+<link title="Analysis" rel="Chapter" href="Analysis.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="Exceptions" rel="Chapter" href="Exceptions.html">
+<link title="GenericAbstract" rel="Chapter" href="GenericAbstract.html">
+<link title="Options" rel="Chapter" href="Options.html">
+<link title="SpecialVariables" rel="Chapter" href="SpecialVariables.html">
+<link title="SpecificAbstract" rel="Chapter" href="SpecificAbstract.html">
+<link title="Types" rel="Chapter" href="Types.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><title>SpecificAbstract</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;lastStat&nbsp;:&nbsp;<span class="constructor">Types</span>.generic_stat_loc&nbsp;<span class="constructor">Pervasives</span>.ref<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;alpha&nbsp;:&nbsp;<span class="constructor">Types</span>.realD&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.abstrD<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;join&nbsp;:&nbsp;<span class="constructor">Types</span>.abstrD&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.abstrD&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.abstrD<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;meet&nbsp;:&nbsp;<span class="constructor">Types</span>.abstrD&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.abstrD&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.abstrD<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;isInAbstractDomain&nbsp;:&nbsp;<span class="constructor">Z</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.abstrD&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;faexpUna&nbsp;:&nbsp;<span class="constructor">Types</span>.arithOpArithUna&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.abstrD&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.abstrD<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;faexpBin&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Types</span>.abstrD&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.arithOpArithBin&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.abstrD&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.abstrD<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;abexpArithBin&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Types</span>.abstrD&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Types</span>.boolOpArithBin&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.abstrD&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.abstrD&nbsp;*&nbsp;<span class="constructor">Types</span>.abstrD<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;baexpUna&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Types</span>.arithOpArithUna&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.abstrD&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.abstrD&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.abstrD<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;baexpBin&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Types</span>.abstrD&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Types</span>.arithOpArithBin&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Types</span>.abstrD&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.abstrD&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.abstrD&nbsp;*&nbsp;<span class="constructor">Types</span>.abstrD<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;widening&nbsp;:&nbsp;<span class="constructor">Types</span>.abstrD&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.abstrD&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Types</span>.abstrD<br>
+<span class="keyword">end</span></code></body></html>

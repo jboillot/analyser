@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Analysis.html">
+<link rel="next" href="Exceptions.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Analyser" rel="Chapter" href="Analyser.html">
+<link title="Analysis" rel="Chapter" href="Analysis.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="Exceptions" rel="Chapter" href="Exceptions.html">
+<link title="GenericAbstract" rel="Chapter" href="GenericAbstract.html">
+<link title="Options" rel="Chapter" href="Options.html">
+<link title="SpecialVariables" rel="Chapter" href="SpecialVariables.html">
+<link title="SpecificAbstract" rel="Chapter" href="SpecificAbstract.html">
+<link title="Types" rel="Chapter" href="Types.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><title>Debug</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Analysis.html" title="Analysis">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Exceptions.html" title="Exceptions">Next</a>
+</div>
+<h1>Module <a href="type_Debug.html">Debug</a></h1>
+
+<pre><span class="keyword">module</span> Debug: <code class="code">sig</code> <a href="Debug.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Module which simplifies print of debug<br>
+</div>
+<hr width="100%">
+<br>
+Module which simplifies print of debug<br>
+
+<pre><span id="VALtype2string"><span class="keyword">val</span> type2string</span> : <code class="type"><a href="Types.html#TYPEtype_c">Types.type_c</a> -> string</code></pre><div class="info ">
+Deserialize type<ul>
+<li><code class="code">t</code> C type of variable</li>
+</ul>
+<br>
+<b>Returns</b> The deserialized string of the type providen<br>
+</div>
+
+<pre><span id="VALarith_expr_needs_parenthesis"><span class="keyword">val</span> arith_expr_needs_parenthesis</span> : <code class="type"><a href="Types.html#TYPEarith_expr">Types.arith_expr</a> -> bool</code></pre><div class="info ">
+Remove sometimes some parenthesis<ul>
+<li><code class="code">a</code> An arithmetic expression</li>
+</ul>
+<br>
+<b>Returns</b> Are parenthesis important around the <code class="code">a</code><br>
+</div>
+
+<pre><span id="VALarith_expr2string"><span class="keyword">val</span> arith_expr2string</span> : <code class="type"><a href="Types.html#TYPEarith_expr">Types.arith_expr</a> -> string</code></pre><div class="info ">
+Deserialize arithmetic expressions<ul>
+<li><code class="code">a</code> The arithmetic expression</li>
+</ul>
+<br>
+<b>Returns</b> The deserialized string of the arithmetic expression providen<br>
+</div>
+
+<pre><span id="VALbool_expr2string"><span class="keyword">val</span> bool_expr2string</span> : <code class="type"><a href="Types.html#TYPEbool_expr">Types.bool_expr</a> -> string</code></pre><div class="info ">
+Deserialize boolean expressions<ul>
+<li><code class="code">b</code> The boolean expression</li>
+</ul>
+<br>
+<b>Returns</b> The deserialized string of the boolean expression providen<br>
+</div>
+
+<pre><span id="VALloc2string"><span class="keyword">val</span> loc2string</span> : <code class="type"><a href="Types.html#TYPEloc">Types.loc</a> -> string</code></pre><div class="info ">
+Deserialize location<ul>
+<li><code class="code">l</code> The location</li>
+</ul>
+<br>
+<b>Returns</b> The deserialized string of the location providen<br>
+</div>
+
+<pre><span id="VALargs2string"><span class="keyword">val</span> args2string</span> : <code class="type"><a href="Types.html#TYPEarith_expr">Types.arith_expr</a> list -> string</code></pre><div class="info ">
+Deserialize arguments of a C function (which is a list of arithmetic expressions)<ul>
+<li><code class="code">args</code> The arguments</li>
+</ul>
+<br>
+<b>Returns</b> The deserialized string of the arguments providen<br>
+</div>
+
+<pre><span id="VALreg2string"><span class="keyword">val</span> reg2string</span> : <code class="type"><a href="Types.html#TYPEreg32">Types.reg32</a> -> string</code></pre><div class="info ">
+Deserialize register<ul>
+<li><code class="code">reg</code> The register</li>
+</ul>
+<br>
+<b>Returns</b> The name of the register providen<br>
+</div>
+
+<pre><span id="VALptrVar2string"><span class="keyword">val</span> ptrVar2string</span> : <code class="type"><a href="Types.html#TYPEptr_var">Types.ptr_var</a> -> string</code></pre><div class="info ">
+Deserialize a pointer variable<ul>
+<li><code class="code">v</code> The pointer variable</li>
+</ul>
+<br>
+<b>Returns</b> The deserialized string of the pointer variable providen<br>
+</div>
+
+<pre><span id="VALasm_expr2string"><span class="keyword">val</span> asm_expr2string</span> : <code class="type"><a href="Types.html#TYPEasm_expr">Types.asm_expr</a> -> string</code></pre><div class="info ">
+Deserialize ASM expression<ul>
+<li><code class="code">ae</code> The ASM expression</li>
+</ul>
+<br>
+<b>Returns</b> The deserialized string of the ASM expression providen<br>
+</div>
+
+<pre><span id="VALstat_c2string"><span class="keyword">val</span> stat_c2string</span> : <code class="type"><a href="Types.html#TYPEstat_c">Types.stat_c</a> -> string -> string</code></pre><div class="info ">
+Deserialize C statement<ul>
+<li><code class="code">stat</code> The C statement</li>
+<li><code class="code">indent</code> The initial prefix of the line</li>
+</ul>
+<br>
+<b>Returns</b> The deserialized string of the C statement providen wich begins by the <code class="code">indent</code><br>
+</div>
+
+<pre><span id="VALstat_a2string"><span class="keyword">val</span> stat_a2string</span> : <code class="type"><a href="Types.html#TYPEstat_a">Types.stat_a</a> -> string -> string</code></pre><div class="info ">
+Deserialize ASM statements<ul>
+<li><code class="code">stat</code> The ASM statement</li>
+<li><code class="code">indent</code> The initial prefix of the line</li>
+</ul>
+<br>
+<b>Returns</b> The deserialized string of the ASM statement providen which begins by the <code class="code">indent</code><br>
+</div>
+
+<pre><span id="VALstat_a_block2string"><span class="keyword">val</span> stat_a_block2string</span> : <code class="type">(<a href="Types.html#TYPEstat_a">Types.stat_a</a> * <a href="Types.html#TYPEloc">Types.loc</a>) list -> string -> string</code></pre><div class="info ">
+Deserialize block of ASM statements<ul>
+<li><code class="code">block</code> The block of ASM statements</li>
+<li><code class="code">indent</code> The initial indent of each line</li>
+</ul>
+<br>
+<b>Returns</b> The deserialized string of the block of ASM statements providen which begins by the <code class="code">indent</code><br>
+</div>
+
+<pre><span id="VALblock_c2string"><span class="keyword">val</span> block_c2string</span> : <code class="type"><a href="Types.html#TYPEloc_stat_c">Types.loc_stat_c</a> -> string -> string</code></pre><div class="info ">
+Deserialize block of C statements<ul>
+<li><code class="code">stat</code> The block of C statements</li>
+</ul>
+<br>
+<b>Returns</b> The deserialized string of the block of C statements providen which begins by the <code class="code">indent</code><br>
+</div>
+
+<pre><span id="VALargs_def2string"><span class="keyword">val</span> args_def2string</span> : <code class="type"><a href="Types.html#TYPEarguments">Types.arguments</a> -> string</code></pre><div class="info ">
+Deserialize definition of arguments of a C function<ul>
+<li><code class="code">args</code> The definition of the arguments</li>
+</ul>
+<br>
+<b>Returns</b> The deserialized string of the arguments providen<br>
+</div>
+
+<pre><span id="VALglobal_statement2string"><span class="keyword">val</span> global_statement2string</span> : <code class="type"><a href="Types.html#TYPEglobal_statement">Types.global_statement</a> -> string</code></pre><div class="info ">
+Deserialize global statements<ul>
+<li><code class="code">stat</code> The global statement</li>
+</ul>
+<br>
+<b>Returns</b> The deserialized string of the global statement<br>
+</div>
+
+<pre><span id="VALprogram2string"><span class="keyword">val</span> program2string</span> : <code class="type"><a href="Types.html#TYPEprogram">Types.program</a> -> string</code></pre><div class="info ">
+Deserialize located programs<ul>
+<li><code class="code">l</code> The entry point of <code class="code">program</code></li>
+<li><code class="code">program</code> The C program with inline assembly</li>
+</ul>
+<br>
+<b>Returns</b> The deserialized string of the program<br>
+</div>
+
+<pre><span id="VALabstrD2string"><span class="keyword">val</span> abstrD2string</span> : <code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a> -> string</code></pre><div class="info ">
+Deserialize an abstract domain<ul>
+<li><code class="code">value</code> The abstract domain</li>
+</ul>
+<br>
+<b>Returns</b> The deserialized string of the abstract domain<br>
+</div>
+
+<pre><span id="VALprint_context"><span class="keyword">val</span> print_context</span> : <code class="type"><a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -> <a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -> unit</code></pre><div class="info ">
+Print a deserialized version of a context<ul>
+<li><code class="code">context</code> The context</li>
+<li><code class="code">env</code> The environment</li>
+</ul>
+<br>
+<b>Returns</b> unit<br>
+</div>
+
+<pre><span id="VALprint_memoryStack"><span class="keyword">val</span> print_memoryStack</span> : <code class="type"><a href="Types.html#TYPEmemoryStack">Types.memoryStack</a> -> unit</code></pre><div class="info ">
+Print a deserialized version of a memory stack<ul>
+<li><code class="code">stack</code> The memory stack</li>
+</ul>
+<br>
+<b>Returns</b> unit<br>
+</div>
+
+<pre><span id="VALprint_environment"><span class="keyword">val</span> print_environment</span> : <code class="type"><a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -> unit</code></pre><div class="info ">
+Print a deserialized version of an environment<ul>
+<li><code class="code">env</code> The environment</li>
+</ul>
+<br>
+<b>Returns</b> unit<br>
+</div>
+
+<pre><span id="VALprint_callStack"><span class="keyword">val</span> print_callStack</span> : <code class="type"><a href="Types.html#TYPEcallStack">Types.callStack</a> Pervasives.ref -> unit</code></pre><div class="info ">
+Print a deserialized version of a call stack<ul>
+<li><code class="code">stack</code> The reference to a call stack</li>
+<li><code class="code">env</code> The environment</li>
+</ul>
+<br>
+<b>Returns</b> unit<br>
+</div>
+</body></html>

@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Types.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Analyser" rel="Chapter" href="Analyser.html">
+<link title="Analysis" rel="Chapter" href="Analysis.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="Exceptions" rel="Chapter" href="Exceptions.html">
+<link title="GenericAbstract" rel="Chapter" href="GenericAbstract.html">
+<link title="Options" rel="Chapter" href="Options.html">
+<link title="SpecialVariables" rel="Chapter" href="SpecialVariables.html">
+<link title="SpecificAbstract" rel="Chapter" href="SpecificAbstract.html">
+<link title="Types" rel="Chapter" href="Types.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><title>Utils</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Types.html" title="Types">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Utils.html">Utils</a></h1>
+
+<pre><span class="keyword">module</span> Utils: <code class="code">sig</code> <a href="Utils.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Utilitary function in order to achieve static interpretation<br>
+</div>
+<hr width="100%">
+<br>
+Utilitary function in order to achieve static interpretation<br>
+
+<pre><span id="VALminmax"><span class="keyword">val</span> minmax</span> : <code class="type">Z.t list -> Z.t * Z.t</code></pre><div class="info ">
+Return the minimum and the maximum of a list. Primitive recursive function.<ul>
+<li><code class="code">l</code> The list of numbers</li>
+</ul>
+<br>
+<b>Raises</b> <code>Failure</code> If the list is empty<br>
+<b>Returns</b> The pair made of the minimum and the maximum of the elements of the list<br>
+</div>
+
+<pre><span id="VALnotBoolExpr"><span class="keyword">val</span> notBoolExpr</span> : <code class="type"><a href="Types.html#TYPEbool_expr">Types.bool_expr</a> -> <a href="Types.html#TYPEbool_expr">Types.bool_expr</a></code></pre><div class="info ">
+Apply the not function to a boolean <ul>
+<li><code class="code">b</code> The initial boolean expression</li>
+</ul>
+<br>
+<b>Returns</b> The boolean expression on which we have apply a not<br>
+</div>
+
+<pre><span id="VALaddLocationsProgram"><span class="keyword">val</span> addLocationsProgram</span> : <code class="type"><a href="Types.html#TYPEglobal_statement">Types.global_statement</a> list -> <a href="Types.html#TYPEprogram">Types.program</a></code></pre><div class="info ">
+Adds locations to an unlocated program<ul>
+<li><code class="code">program</code> The unlocated program</li>
+</ul>
+<br>
+<b>Returns</b> The program located<br>
+</div>
+
+<pre><span id="VALremoveLabelsProgram"><span class="keyword">val</span> removeLabelsProgram</span> : <code class="type"><a href="Types.html#TYPEloc">Types.loc</a> * (<a href="Types.html#TYPEglobal_statement">Types.global_statement</a> * <a href="Types.html#TYPEloc">Types.loc</a>) list -> <a href="Types.html#TYPEprogram">Types.program</a></code></pre><div class="info ">
+Remove the labels of the program and replace them by the locations associated<ul>
+<li><code class="code">program</code> The located program</li>
+</ul>
+<br>
+<b>Returns</b> The located program with the labels which have been replaced<br>
+</div>
+
+<pre><span id="VALinvMin"><span class="keyword">val</span> invMin</span> : <code class="type">Z.t -> Z.t -> Z.t</code></pre><div class="info ">
+Returns the inverse of the minimum where a et b are already inversed<ul>
+<li><code class="code">a</code> 1/<code class="code">c</code></li>
+<li><code class="code">b</code> 1/<code class="code">d</code></li>
+</ul>
+<br>
+<b>Returns</b> min(1/(<code class="code">c</code>, <code class="code">d</code>))<br>
+</div>
+
+<pre><span id="VALinvMax"><span class="keyword">val</span> invMax</span> : <code class="type">Z.t -> Z.t -> Z.t</code></pre><div class="info ">
+Returns the inverse of the maximum where a et b are already inversed<ul>
+<li><code class="code">a</code> 1/<code class="code">c</code></li>
+<li><code class="code">b</code> 1/<code class="code">d</code></li>
+</ul>
+<br>
+<b>Returns</b> max(1/(<code class="code">c</code>, <code class="code">d</code>))<br>
+</div>
+
+<pre><span id="VALremoveCVariables"><span class="keyword">val</span> removeCVariables</span> : <code class="type"><a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -> <a href="Types.html#TYPEabstrContext">Types.abstrContext</a></code></pre><div class="info ">
+Remove the C variables from a context. Used when we jump in another function and that we have no clue on the variable stack<ul>
+<li><code class="code">context</code> The last context</li>
+</ul>
+<br>
+<b>Returns</b> The new context<br>
+</div>
+
+<pre><span id="VALgetLocationNumber"><span class="keyword">val</span> getLocationNumber</span> : <code class="type"><a href="Types.html#TYPEloc">Types.loc</a> -> int</code></pre><div class="info ">
+Return the number associated to a location<ul>
+<li><code class="code">l</code> The location</li>
+</ul>
+<br>
+<b>Returns</b> The number associated<br>
+</div>
+
+<pre><span id="VALgetRegNameVar"><span class="keyword">val</span> getRegNameVar</span> : <code class="type"><a href="Types.html#TYPEreg32">Types.reg32</a> -> <a href="Types.html#TYPEname_var">Types.name_var</a></code></pre><div class="info ">
+Return the variable name of a register<ul>
+<li><code class="code">reg</code> The register</li>
+</ul>
+<br>
+<b>Returns</b> Its name<br>
+</div>
+</body></html>

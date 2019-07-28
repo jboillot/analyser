@@ -1,0 +1,388 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Exceptions.html">
+<link rel="next" href="Options.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Analyser" rel="Chapter" href="Analyser.html">
+<link title="Analysis" rel="Chapter" href="Analysis.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="Exceptions" rel="Chapter" href="Exceptions.html">
+<link title="GenericAbstract" rel="Chapter" href="GenericAbstract.html">
+<link title="Options" rel="Chapter" href="Options.html">
+<link title="SpecialVariables" rel="Chapter" href="SpecialVariables.html">
+<link title="SpecificAbstract" rel="Chapter" href="SpecificAbstract.html">
+<link title="Types" rel="Chapter" href="Types.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><title>GenericAbstract</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Exceptions.html" title="Exceptions">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Options.html" title="Options">Next</a>
+</div>
+<h1>Module <a href="type_GenericAbstract.html">GenericAbstract</a></h1>
+
+<pre><span class="keyword">module</span> GenericAbstract: <code class="code">sig</code> <a href="GenericAbstract.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Static interpretation methods which are not dependant to the abstraction domain chosen.<br>
+</div>
+<hr width="100%">
+<br>
+Static interpretation methods which are not dependant to the abstraction domain chosen.<br>
+
+<pre><span id="VALvar_id"><span class="keyword">val</span> var_id</span> : <code class="type">int Pervasives.ref</code></pre><div class="info ">
+The last id used in an environment<br>
+</div>
+
+<pre><span id="VALareEnvironmentEqual"><span class="keyword">val</span> areEnvironmentEqual</span> : <code class="type"><a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -><br>       <a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -> bool</code></pre><div class="info ">
+Test equality of two environments<ul>
+<li><code class="code">e1</code> The first environment</li>
+<li><code class="code">e2</code> The second environment</li>
+</ul>
+<br>
+<b>Returns</b> Are <code class="code">e1</code> and <code class="code">e2</code> equal<br>
+</div>
+
+<pre><span id="VALwideningOnEnvironments"><span class="keyword">val</span> wideningOnEnvironments</span> : <code class="type"><a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -><br>       <a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -><br>       <a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref</code></pre><div class="info ">
+Apply widening on two environments by applying the widening to all the abstract domains of their ids. Delete the variables which exist only in one environment.<ul>
+<li><code class="code">e1</code> The first environment</li>
+<li><code class="code">e2</code> The second environment</li>
+</ul>
+<br>
+<b>Returns</b> The environment made of the application of the widening on <code class="code">e1</code> and <code class="code">e2</code><br>
+</div>
+
+<pre><span id="VALenvironmentJoin"><span class="keyword">val</span> environmentJoin</span> : <code class="type"><a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -><br>       <a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -><br>       <a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref</code></pre><div class="info ">
+Joins two environment by joining all the ids. Delete the variables which exist only in one environment.<ul>
+<li><code class="code">e1</code> The first environment</li>
+<li><code class="code">e2</code> The second environment</li>
+</ul>
+<br>
+<b>Returns</b> The environment made of the join of <code class="code">e1</code> and <code class="code">e2</code><br>
+</div>
+
+<pre><span id="VALcontextMerge"><span class="keyword">val</span> contextMerge</span> : <code class="type"><a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -> <a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -> <a href="Types.html#TYPEabstrContext">Types.abstrContext</a></code></pre><div class="info ">
+Merge two contexts by returning the variables which are both represented by the same ids.<ul>
+<li><code class="code">c1</code> The first context</li>
+<li><code class="code">c2</code> The second context</li>
+</ul>
+<br>
+<b>Returns</b> The resulting context<br>
+</div>
+
+<pre><span id="VALforgetNewVariables"><span class="keyword">val</span> forgetNewVariables</span> : <code class="type">lastContext:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -><br>       newContext:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -><br>       env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -> unit</code></pre><div class="info ">
+Remove from the environment the variables which have been added in the <code class="code">newContext</code>.<ul>
+<li><code class="code">lastContext</code> The original context</li>
+<li><code class="code">newContext</code> The new context with perhaps some variables which have been added or modified and which should be forgotten in the <code class="code">env</code></li>
+<li><code class="code">env</code> The environment</li>
+</ul>
+<br>
+<b>Returns</b> unit<br>
+</div>
+
+<pre><span id="VALenvironmentMeet"><span class="keyword">val</span> environmentMeet</span> : <code class="type"><a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -><br>       <a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -><br>       <a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref</code></pre><div class="info ">
+Meet two environment by meeting all the ids. Delete the variables which exist only in one environment.<ul>
+<li><code class="code">e1</code> The first environment</li>
+<li><code class="code">e2</code> The second environment</li>
+</ul>
+<br>
+<b>Returns</b> The environment made of the meet of <code class="code">e1</code> and <code class="code">e2</code><br>
+</div>
+
+<pre><span id="VALgetVar"><span class="keyword">val</span> getVar</span> : <code class="type">context:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -><br>       vn:<a href="Types.html#TYPEname_var">Types.name_var</a> -><br>       env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -> <a href="Types.html#TYPEabstrD">Types.abstrD</a></code></pre><div class="info ">
+Return a variable at a location in an environment<ul>
+<li><code class="code">context</code> The context in which <code class="code">vn</code> is</li>
+<li><code class="code">vn</code> The name of the variable</li>
+<li><code class="code">env</code> The environment in which the variable will be searched</li>
+</ul>
+<br>
+<b>Raises</b> <code>UNDEFINEDVAR</code> if the variable is not declared at the location specified<br>
+<b>Returns</b> The abstract domain of the variable at the location specified<br>
+</div>
+
+<pre><span id="VALlfp"><span class="keyword">val</span> lfp</span> : <code class="type">env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -><br>       e1:(<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> * <a href="Types.html#TYPEmemoryStack">Types.memoryStack</a> -><br>           <a href="Types.html#TYPEabstrContext">Types.abstrContext</a> * <a href="Types.html#TYPEmemoryStack">Types.memoryStack</a>) -><br>       <a href="Types.html#TYPEabstrContext">Types.abstrContext</a> * <a href="Types.html#TYPEmemoryStack">Types.memoryStack</a> -> <a href="Types.html#TYPEmemoryStack">Types.memoryStack</a></code></pre><div class="info ">
+Calculates the least fixpoint of <code class="code">env</code> by the function <code class="code">e1</code><ul>
+<li><code class="code">env</code> The initial environment</li>
+<li><code class="code">e1</code> The function to apply on the environment until we have a fixpoint (or an over-approximation of it if we use a widening function)</li>
+<li><code class="code">context</code> The initial context</li>
+<li><code class="code">lastStack</code> The initial memory stack</li>
+</ul>
+<br>
+<b>Returns</b> The memory stack when the least fixpoint (or the over-approximation of it) has been found<br>
+</div>
+
+<pre><span id="VALaddVarToContext"><span class="keyword">val</span> addVarToContext</span> : <code class="type">vn:<a href="Types.html#TYPEname_var">Types.name_var</a> -><br>       value:<a href="Types.html#TYPEabstrD">Types.abstrD</a> -><br>       env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -><br>       <a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -> <a href="Types.html#TYPEabstrContext">Types.abstrContext</a></code></pre><div class="info ">
+Adds an undefined variable to a context and returns the new context<ul>
+<li><code class="code">vn</code> The name of the variable</li>
+<li><code class="code">value</code> The value of the variable that we want to set</li>
+<li><code class="code">env</code> The environment</li>
+<li><code class="code">context</code> The context</li>
+</ul>
+<br>
+<b>Raises</b> <code>ALREADYDEFINED</code> if the variable already exists in <code class="code">context</code><br>
+<b>Returns</b> The new context in which the value of the variable has been added<br>
+</div>
+
+<pre><span id="VALupdateVarInContext"><span class="keyword">val</span> updateVarInContext</span> : <code class="type">vn:<a href="Types.html#TYPEname_var">Types.name_var</a> -><br>       value:<a href="Types.html#TYPEabstrD">Types.abstrD</a> -><br>       context:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -><br>       env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -> unit</code></pre><div class="info ">
+Update an existing variable in a context and returns the new context<ul>
+<li><code class="code">vn</code> The name of the variable</li>
+<li><code class="code">value</code> The value of the variable that we want to set</li>
+<li><code class="code">context</code> The context</li>
+<li><code class="code">env</code> The environment</li>
+</ul>
+<br>
+<b>Raises</b> <code>UNDEFINEDVAR</code> if the variable doesn't exist in <code class="code">context</code><br>
+<b>Returns</b> unit<br>
+</div>
+
+<pre><span id="VALgetAsmValue"><span class="keyword">val</span> getAsmValue</span> : <code class="type">ae:<a href="Types.html#TYPEasm_expr">Types.asm_expr</a> -><br>       context:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -><br>       env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -> <a href="Types.html#TYPEabstrD">Types.abstrD</a></code></pre><div class="info ">
+Get the abstract interpretation of an ASM expression<ul>
+<li><code class="code">ae</code> The ASM expression</li>
+<li><code class="code">context</code> The context</li>
+<li><code class="code">env</code> The environment</li>
+</ul>
+<br>
+<b>Returns</b> The abstract interpretation of the <code class="code">ae</code> in the provided <code class="code">context</code> and <code class="code">env</code><br>
+</div>
+
+<pre><span id="VALgetLastFunction"><span class="keyword">val</span> getLastFunction</span> : <code class="type">l:<a href="Types.html#TYPEloc">Types.loc</a> -><br>       f:<a href="Types.html#TYPEfunctionContext">Types.functionContext</a> Pervasives.ref -><br>       <a href="Types.html#TYPEglobal_statement">Types.global_statement</a> * <a href="Types.html#TYPEabstrContext">Types.abstrContext</a></code></pre><div class="info ">
+Get the C function in which a location is<ul>
+<li><code class="code">l</code> The location</li>
+<li><code class="code">f</code> The reference to the set of the C functions which are known</li>
+</ul>
+<br>
+<b>Returns</b> The function as a global statement and the context associated to it<br>
+</div>
+
+<pre><span id="VALjoinMemoryStack"><span class="keyword">val</span> joinMemoryStack</span> : <code class="type">s1:<a href="Types.html#TYPEmemoryStack">Types.memoryStack</a> -> s2:<a href="Types.html#TYPEmemoryStack">Types.memoryStack</a> -> <a href="Types.html#TYPEmemoryStack">Types.memoryStack</a></code></pre><div class="info ">
+Join the abstract values of two memory stacks<ul>
+<li><code class="code">s1</code> The first memory stack</li>
+<li><code class="code">s2</code> The second memory stack</li>
+</ul>
+<br>
+<b>Raises</b> <code>WRONGSTACKOFFSET</code> If the stacks don't have the same length<br>
+<b>Returns</b> The memory stack in which each element is the join of the initials memory stacks<br>
+</div>
+
+<pre><span id="VALinitFunction"><span class="keyword">val</span> initFunction</span> : <code class="type">cCall:bool -> callStack:<a href="Types.html#TYPEcallStack">Types.callStack</a> Pervasives.ref -> unit</code></pre><div class="info ">
+Initialize the call stack in order to prepare it before the call of a function<ul>
+<li><code class="code">cCall</code> Is it a call to a C function (respectively ASM function)</li>
+<li><code class="code">callStack</code> A reference to the call stack</li>
+</ul>
+<br>
+<b>Returns</b> unit<br>
+</div>
+
+<pre><span id="VALpostlude_asm"><span class="keyword">val</span> postlude_asm</span> : <code class="type">context:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -><br>       env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -> <a href="Types.html#TYPEabstrContext">Types.abstrContext</a></code></pre><div class="info ">
+Remove the registers from a context and in the associated environment after an ASM block<ul>
+<li><code class="code">context</code> The context</li>
+</ul>
+<br>
+<b>Returns</b> The new context without the registers' values<br>
+</div>
+
+<pre><span id="VALraiseReturn"><span class="keyword">val</span> raiseReturn</span> : <code class="type">cCall:bool -><br>       addReturnPossibility:bool -><br>       returnCode:<a href="Types.html#TYPEabstrD">Types.abstrD</a> -><br>       returnContext:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -><br>       returnEnv:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -><br>       callStack:<a href="Types.html#TYPEcallStack">Types.callStack</a> Pervasives.ref -> stack:<a href="Types.html#TYPEmemoryStack">Types.memoryStack</a> -> unit</code></pre><div class="info ">
+Raise a return (called by return/ret statement), join the return code, the return context, the return environment and the memory stack with the last ones saved<ul>
+<li><code class="code">cCall</code> Is the statement which calls it a return (respectively ret)</li>
+<li><code class="code">addReturnPossibility</code> Do we have to wait for another return/ret</li>
+<li><code class="code">returnCode</code> The code that has been returned</li>
+<li><code class="code">returnContext</code> The context that has been returned</li>
+<li><code class="code">returnEnv</code> The environment that has been returned</li>
+<li><code class="code">callStack</code> A reference to the actual call stack</li>
+<li><code class="code">stack</code> The memory stack to return</li>
+</ul>
+<br>
+<b>Raises</b> <code>Failure</code> If you try to return a C function in ASM and vice versa<br>
+<b>Returns</b> unit<br>
+</div>
+
+<pre><span id="VALabexpBoolBin"><span class="keyword">val</span> abexpBoolBin</span> : <code class="type"><a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref * bool -><br>       <a href="Types.html#TYPEboolOpBoolBin">Types.boolOpBoolBin</a> -><br>       <a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref * bool -><br>       <a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref * bool</code></pre><div class="info ">
+Generic abstract interpretation of binary boolean operators<ul>
+<li><code class="code">env1</code> The possible environment in which the first operand is satisfied</li>
+<li><code class="code">context1IsBot</code> Is the context associated to <code class="code">env1</code> bottom</li>
+<li><code class="code">op</code> The binary boolean operator</li>
+<li><code class="code">env2</code> The possible environment in which the second operand is satisfied</li>
+<li><code class="code">context2IsBot</code> Is the context associated to <code class="code">env2</code> bottom</li>
+</ul>
+<br>
+<b>Returns</b> The environment in which the whole boolean operation is satisfied and a boolean which represents if the resulting environment is bottom<br>
+</div>
+
+<pre><span id="VALfaexp"><span class="keyword">val</span> faexp</span> : <code class="type">a:<a href="Types.html#TYPEarith_expr">Types.arith_expr</a> -><br>       context:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -><br>       env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -> <a href="Types.html#TYPEabstrD">Types.abstrD</a></code></pre><div class="info ">
+Forward abstract semantics of arithmetic expressions<ul>
+<li><code class="code">a</code> An arithmetic expression</li>
+<li><code class="code">context</code> The context in which the arithmetic expression is performed</li>
+<li><code class="code">env</code> The environment in which the arithmetic expression is performed, perhaps it will be modified</li>
+</ul>
+<br>
+<b>Raises</b><ul><li><code>UNDEFINEDVAR</code> If a variable is not defined in the provided context</li>
+<li><code>PTRINTMATCH</code> If an operation is performed between a pointer and an int</li>
+</ul>
+<b>Returns</b> The abstract domain of the evaluation of the arithmetic expression<br>
+</div>
+
+<pre><span id="VALbaexp"><span class="keyword">val</span> baexp</span> : <code class="type">a:<a href="Types.html#TYPEarith_expr">Types.arith_expr</a> -><br>       context:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -><br>       p:<a href="Types.html#TYPEabstrD">Types.abstrD</a> -> env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -> bool</code></pre><div class="info ">
+Backward abstract semantics of arithmetic expressions<ul>
+<li><code class="code">a</code> An arithmetic expression</li>
+<li><code class="code">context</code> The context in which the arithmetic expression is performed</li>
+<li><code class="code">p</code> The domain in which the evaluation of the arithmetic expression has to be</li>
+<li><code class="code">env</code> The environment in which the arithmetic expression is performed, perhaps it will be modified</li>
+</ul>
+<br>
+<b>Raises</b> <code>UNDEFINEDVAR</code> If a variable is not defined in the provided context<br>
+<b>Returns</b> Does the resulting context have to be bottom<br>
+</div>
+
+<pre><span id="VALabexp"><span class="keyword">val</span> abexp</span> : <code class="type">b:<a href="Types.html#TYPEbool_expr">Types.bool_expr</a> -><br>       context:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -><br>       env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -> bool</code></pre><div class="info ">
+Generic abstract interpretation of boolean expression<ul>
+<li><code class="code">b</code> The boolean expression</li>
+<li><code class="code">context</code> The context</li>
+<li><code class="code">env</code> The environment, perhaps it will be modified</li>
+</ul>
+<br>
+<b>Returns</b> Does the resulting context have to be bottom<br>
+</div>
+
+<pre><span id="VALmatchCArgs"><span class="keyword">val</span> matchCArgs</span> : <code class="type">args_def:<a href="Types.html#TYPEarguments">Types.arguments</a> -><br>       args:<a href="Types.html#TYPEarith_expr">Types.arith_expr</a> list -><br>       contextToEnhance:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -><br>       context:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -><br>       env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -> <a href="Types.html#TYPEabstrContext">Types.abstrContext</a></code></pre><div class="info ">
+Add the abstract interpretation of a list of variables by the definition of a C function<ul>
+<li><code class="code">args_def</code> The definition of the arguments of a C function</li>
+<li><code class="code">args</code> The list of the arithmetic expressions provided</li>
+<li><code class="code">contextToEnhance</code> The context to update</li>
+<li><code class="code">context</code> The context in which the arithmetic expression will be evaluated</li>
+<li><code class="code">env</code> The environment in which the arithmetic expression will be evaluated and which will be enhanced with the new variables</li>
+</ul>
+<br>
+<b>Raises</b> <code>Failure</code> If <code class="code">args_def</code> doesn't match <code class="code">args</code><br>
+<b>Returns</b> The new context made from <code class="code">contextToEnhance</code><br>
+</div>
+
+<pre><span id="VALmatchAsmArgs"><span class="keyword">val</span> matchAsmArgs</span> : <code class="type">context:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -><br>       args_def:<a href="Types.html#TYPEarguments">Types.arguments</a> -><br>       stack:<a href="Types.html#TYPEmemoryStack">Types.memoryStack</a> -><br>       env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -><br>       <a href="Types.html#TYPEabstrContext">Types.abstrContext</a> * <a href="Types.html#TYPEmemoryStack">Types.memoryStack</a></code></pre><div class="info ">
+Adds the arguments from a memory stack to a context by a C function's definition<ul>
+<li><code class="code">context</code> The context</li>
+<li><code class="code">args_def_reversed</code> The definition of the arguments that the C function is waiting for</li>
+<li><code class="code">stack</code> The memory stack</li>
+<li><code class="code">env</code> The environment</li>
+</ul>
+<br>
+<b>Raises</b> <code>Failure</code> If the memory stack is too tiny compared to the argument's list<br>
+<b>Returns</b> The pair made of the new context and of the new memory stack (without the arguments used)<br>
+</div>
+
+<pre><span id="VALprelude_asm"><span class="keyword">val</span> prelude_asm</span> : <code class="type">context:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -><br>       env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -> <a href="Types.html#TYPEabstrContext">Types.abstrContext</a></code></pre><div class="info ">
+Add registers to the context <ul>
+<li><code class="code">context</code> The context before the ASM block</li>
+<li><code class="code">env</code> The environment which will be modified</li>
+</ul>
+<br>
+<b>Returns</b> The new context with the registers set<br>
+</div>
+
+<pre><span id="VALreset_registers"><span class="keyword">val</span> reset_registers</span> : <code class="type">context:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -><br>       env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -> eax_value:<a href="Types.html#TYPEabstrD">Types.abstrD</a> -> unit</code></pre><div class="info ">
+Reset the value of all registers except EAX which is replaced by a specified value<ul>
+<li><code class="code">context</code> The context</li>
+<li><code class="code">env</code> The environment which will be modified</li>
+<li><code class="code">eax_value</code> The new value of EAX</li>
+</ul>
+<br>
+<b>Returns</b> unit<br>
+</div>
+
+<pre><span id="VALsetRegisters"><span class="keyword">val</span> setRegisters</span> : <code class="type">realContext:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -><br>       contextWithRegs:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -><br>       env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -> unit</code></pre><div class="info ">
+Replace the registers of a context by the registers of another one<ul>
+<li><code class="code">c1</code> The context in which the registers will be changed</li>
+<li><code class="code">c2</code> The context from which the registers will be get</li>
+<li><code class="code">env</code> The environment which will be modified</li>
+</ul>
+<br>
+<b>Returns</b> The new context made of <code class="code">c1</code> with registers of <code class="code">c2</code><br>
+</div>
+
+<pre><span id="VALaPostAsm"><span class="keyword">val</span> aPostAsm</span> : <code class="type"><a href="Types.html#TYPEloc">Types.loc</a> * <a href="Types.html#TYPEstat_a">Types.stat_a</a> * <a href="Types.html#TYPEloc">Types.loc</a> -><br>       shouldGoBackOnJmp:bool -><br>       f:<a href="Types.html#TYPEfunctionContext">Types.functionContext</a> Pervasives.ref -><br>       callStack:<a href="Types.html#TYPEcallStack">Types.callStack</a> Pervasives.ref -><br>       stack:<a href="Types.html#TYPEmemoryStack">Types.memoryStack</a> -><br>       env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -><br>       context:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -> <a href="Types.html#TYPEabstrContext">Types.abstrContext</a> * <a href="Types.html#TYPEmemoryStack">Types.memoryStack</a></code></pre><div class="info ">
+Generic forward non-relational abstract interpretation of ASM statements<ul>
+<li><code class="code">stat</code> The statement which is currently read</li>
+<li><code class="code">shouldGoBackOnJmp</code> Is the statement read in a branch which has not been read before</li>
+<li><code class="code">f</code> A reference to the set of the C functions</li>
+<li><code class="code">callStack</code> The call stack</li>
+<li><code class="code">stack</code> The memory stack</li>
+<li><code class="code">env</code> The environment</li>
+<li><code class="code">context</code> The context</li>
+</ul>
+<br>
+<b>Returns</b> A pair made of the new context after the read of stat and of the new memory stack<br>
+</div>
+
+<pre><span id="VALaPostAsmBlock"><span class="keyword">val</span> aPostAsmBlock</span> : <code class="type"><a href="Types.html#TYPEloc">Types.loc</a> * (<a href="Types.html#TYPEstat_a">Types.stat_a</a> * <a href="Types.html#TYPEloc">Types.loc</a>) list -><br>       shouldGoBackOnJmp:bool -><br>       f:<a href="Types.html#TYPEfunctionContext">Types.functionContext</a> Pervasives.ref -><br>       callStack:<a href="Types.html#TYPEcallStack">Types.callStack</a> Pervasives.ref -><br>       stack:<a href="Types.html#TYPEmemoryStack">Types.memoryStack</a> -><br>       env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -><br>       <a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -> <a href="Types.html#TYPEabstrContext">Types.abstrContext</a> * <a href="Types.html#TYPEmemoryStack">Types.memoryStack</a></code></pre><div class="info ">
+Generic forward non-relational abstract interpretation of ASM blocks<ul>
+<li><code class="code">pre_loc</code> The entry location of <code class="code">block</code></li>
+<li><code class="code">block</code> The block of ASM statement to read</li>
+<li><code class="code">shouldGoBackOnJmp</code> Is the statement read in a branch which has not been read before</li>
+<li><code class="code">f</code> A reference to the set of C functions</li>
+<li><code class="code">callStack</code> The call stack</li>
+<li><code class="code">stack</code> The memory stack</li>
+<li><code class="code">env</code> The environment</li>
+<li><code class="code">context</code> The context</li>
+</ul>
+<br>
+<b>Returns</b> A pair made of the new context and of the new memory stack<br>
+</div>
+
+<pre><span id="VALaPostCBlock"><span class="keyword">val</span> aPostCBlock</span> : <code class="type"><a href="Types.html#TYPEloc_stat_c">Types.loc_stat_c</a> -><br>       shouldGoBackOnJmp:bool -><br>       f:<a href="Types.html#TYPEfunctionContext">Types.functionContext</a> Pervasives.ref -><br>       callStack:<a href="Types.html#TYPEcallStack">Types.callStack</a> Pervasives.ref -><br>       lastAsmStack:<a href="Types.html#TYPEmemoryStack">Types.memoryStack</a> -><br>       env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -><br>       context:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -> <a href="Types.html#TYPEabstrContext">Types.abstrContext</a> * <a href="Types.html#TYPEmemoryStack">Types.memoryStack</a></code></pre><div class="info ">
+Generic forward non-relational abstract interpretation of C blocks<ul>
+<li><code class="code">program</code> The block of C statements</li>
+<li><code class="code">shouldGoBackOnJmp</code> Is the statement read in a branch which has not been read before</li>
+<li><code class="code">f</code> A reference to the C functions</li>
+<li><code class="code">callStack</code> The call stack</li>
+<li><code class="code">lastAsmStack</code> The stack state of the last ASM statement</li>
+<li><code class="code">env</code> The environment</li>
+<li><code class="code">context</code> The context</li>
+</ul>
+<br>
+<b>Returns</b> The pair made of the new context after the execution of the block of C statements and the new memory stack<br>
+</div>
+
+<pre><span id="VALaPostC"><span class="keyword">val</span> aPostC</span> : <code class="type"><a href="Types.html#TYPEloc">Types.loc</a> * <a href="Types.html#TYPEstat_c">Types.stat_c</a> * <a href="Types.html#TYPEloc">Types.loc</a> -><br>       shouldGoBackOnJmp:bool -><br>       f:<a href="Types.html#TYPEfunctionContext">Types.functionContext</a> Pervasives.ref -><br>       callStack:<a href="Types.html#TYPEcallStack">Types.callStack</a> Pervasives.ref -><br>       lastAsmStack:<a href="Types.html#TYPEmemoryStack">Types.memoryStack</a> -><br>       env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -><br>       context:<a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -> <a href="Types.html#TYPEabstrContext">Types.abstrContext</a> * <a href="Types.html#TYPEmemoryStack">Types.memoryStack</a></code></pre><div class="info ">
+Generic forward non-relational abstract interpretation of C statements<ul>
+<li><code class="code">stat</code> The C statement</li>
+<li><code class="code">shouldGoBackOnJmp</code> Is the statement read in a branch which has not been read before</li>
+<li><code class="code">f</code> A reference to the C functions</li>
+<li><code class="code">callStack</code> The call stack</li>
+<li><code class="code">lastAsmStack</code> The stack state of the last ASM statement</li>
+<li><code class="code">env</code> The environment</li>
+<li><code class="code">context</code> The context</li>
+</ul>
+<br>
+<b>Returns</b> The pair made of the new context after the excetion of the C statement and of the new memory stack<br>
+</div>
+
+<pre><span id="VALaPostGlobalC"><span class="keyword">val</span> aPostGlobalC</span> : <code class="type">pre_loc:<a href="Types.html#TYPEloc">Types.loc</a> -><br>       stat:<a href="Types.html#TYPEglobal_statement">Types.global_statement</a> -><br>       post_loc:<a href="Types.html#TYPEloc">Types.loc</a> -><br>       f:<a href="Types.html#TYPEfunctionContext">Types.functionContext</a> Pervasives.ref -><br>       env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -><br>       <a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -> <a href="Types.html#TYPEabstrContext">Types.abstrContext</a></code></pre><div class="info ">
+Generic forward non-relational abstract interpretation of global statement<ul>
+<li><code class="code">pre_loc</code> The location before the global statement</li>
+<li><code class="code">stat</code> The global statement</li>
+<li><code class="code">post_loc</code> The location after the global statement</li>
+<li><code class="code">f</code> A reference to the set of C functions</li>
+<li><code class="code">env</code> The environement</li>
+<li><code class="code">context</code> The context</li>
+</ul>
+<br>
+<b>Returns</b> The new context after the execution of the global statement<br>
+</div>
+
+<pre><span id="VALaPostProgram"><span class="keyword">val</span> aPostProgram</span> : <code class="type">pre_loc:<a href="Types.html#TYPEloc">Types.loc</a> -><br>       program:(<a href="Types.html#TYPEglobal_statement">Types.global_statement</a> * <a href="Types.html#TYPEloc">Types.loc</a>) list -><br>       f:<a href="Types.html#TYPEfunctionContext">Types.functionContext</a> Pervasives.ref -><br>       env:<a href="Types.html#TYPEabstrEnvironment">Types.abstrEnvironment</a> Pervasives.ref -><br>       <a href="Types.html#TYPEabstrContext">Types.abstrContext</a> -> <a href="Types.html#TYPEabstrContext">Types.abstrContext</a></code></pre><div class="info ">
+Generic foward non-relational abstract interpretation of a block of global statements<ul>
+<li><code class="code">pre_loc</code> The location before the first global statement of the block</li>
+<li><code class="code">program</code> The block of global statements</li>
+<li><code class="code">f</code> A reference to the set of C functions</li>
+<li><code class="code">env</code> The environment</li>
+<li><code class="code">context</code> The context</li>
+</ul>
+<br>
+<b>Returns</b> The new context after the execution of the block of global statements<br>
+</div>
+</body></html>

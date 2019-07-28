@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Options.html">
+<link rel="next" href="SpecialVariables.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Analyser" rel="Chapter" href="Analyser.html">
+<link title="Analysis" rel="Chapter" href="Analysis.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="Exceptions" rel="Chapter" href="Exceptions.html">
+<link title="GenericAbstract" rel="Chapter" href="GenericAbstract.html">
+<link title="Options" rel="Chapter" href="Options.html">
+<link title="SortedList" rel="Chapter" href="SortedList.html">
+<link title="SpecialVariables" rel="Chapter" href="SpecialVariables.html">
+<link title="SpecificAbstract" rel="Chapter" href="SpecificAbstract.html">
+<link title="Types" rel="Chapter" href="Types.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><title>SortedList</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Options.html" title="Options">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="SpecialVariables.html" title="SpecialVariables">Next</a>
+</div>
+<h1>Module <a href="type_SortedList.html">SortedList</a></h1>
+
+<pre><span class="keyword">module</span> SortedList: <code class="code">sig</code> <a href="SortedList.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Module used to manipulate abstract domain of pointers as a sorted list<br>
+</div>
+<hr width="100%">
+
+<pre><code><span id="TYPEptr_var"><span class="keyword">type</span> <code class="type"></code>ptr_var</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTptr_var.PtrVar"><span class="constructor">PtrVar</span></span> <span class="keyword">of</span> <code class="type"><a href="SortedList.html#TYPEptr_var">ptr_var</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTptr_var.LastPtrVar"><span class="constructor">LastPtrVar</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+
+</tr></table>
+
+<div class="info ">
+Pointer induction to a variable name<br>
+</div>
+
+
+<pre><span id="TYPEsortedList"><span class="keyword">type</span> <code class="type"></code>sortedList</span> = <code class="type"><a href="SortedList.html#TYPEptr_var">ptr_var</a> list</code> </pre>
+<div class="info ">
+Sorted list of pointer variables<br>
+</div>
+
+
+<pre><span id="VALcmp_ptr_var"><span class="keyword">val</span> cmp_ptr_var</span> : <code class="type"><a href="SortedList.html#TYPEptr_var">ptr_var</a> -> <a href="SortedList.html#TYPEptr_var">ptr_var</a> -> int</code></pre><div class="info ">
+Function of comparison of pointer variables<br>
+<b>Returns</b> The comparison result of the two pointer variables<br>
+</div>
+<div class="param_info"><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+a</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="SortedList.html#TYPEptr_var">ptr_var</a></code><br>
+The first pointer variable
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+b</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="SortedList.html#TYPEptr_var">ptr_var</a></code><br>
+the second pointer variable
+</tr>
+</table>
+</td>
+</tr>
+</table></div>
+
+<pre><span id="VALaddElement"><span class="keyword">val</span> addElement</span> : <code class="type"><a href="SortedList.html#TYPEptr_var">ptr_var</a> -> <a href="SortedList.html#TYPEptr_var">ptr_var</a> list -> <a href="SortedList.html#TYPEsortedList">sortedList</a></code></pre><div class="info ">
+Add an element to a sorted list. Complexity in the worst case in linear time. Avoids duplication.<br>
+<b>Returns</b> The new abstract domain of pointer variables<br>
+</div>
+<div class="param_info"><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+element</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="SortedList.html#TYPEptr_var">ptr_var</a></code><br>
+The new pointer variable
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+l</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="SortedList.html#TYPEptr_var">ptr_var</a> list</code><br>
+The last abstract domain of pointer variables
+</tr>
+</table>
+</td>
+</tr>
+</table></div>
+
+<pre><span id="VALmergeSortedList"><span class="keyword">val</span> mergeSortedList</span> : <code class="type"><a href="SortedList.html#TYPEsortedList">sortedList</a> -> <a href="SortedList.html#TYPEsortedList">sortedList</a> -> <a href="SortedList.html#TYPEsortedList">sortedList</a></code></pre><div class="info ">
+Merge tow sorted lists. Complexity in the worst case in linear time. Avoids duplication.<br>
+<b>Returns</b> The new abstract domain of pointer variables which is the merge of the two given as parameter<br>
+</div>
+<div class="param_info"><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+l1</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="SortedList.html#TYPEsortedList">sortedList</a></code><br>
+The first abstract domain of pointer variables
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+l2</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="SortedList.html#TYPEsortedList">sortedList</a></code><br>
+The second abstract domain of pointer variables
+</tr>
+</table>
+</td>
+</tr>
+</table></div>
+
+<pre><span id="VALmeetSortedList"><span class="keyword">val</span> meetSortedList</span> : <code class="type"><a href="SortedList.html#TYPEsortedList">sortedList</a> -> <a href="SortedList.html#TYPEsortedList">sortedList</a> -> <a href="SortedList.html#TYPEsortedList">sortedList</a></code></pre><div class="info ">
+Return the meet of tow sorted lists. Complexity in the worst case in linear time.<br>
+<b>Returns</b> The new abstract domain of pointer variables which is the meet of the two given as parameter<br>
+</div>
+<div class="param_info"><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+l1</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="SortedList.html#TYPEsortedList">sortedList</a></code><br>
+The first abstract domain of pointer variables
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+l2</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="SortedList.html#TYPEsortedList">sortedList</a></code><br>
+The second abstract domain of pointer variables
+</tr>
+</table>
+</td>
+</tr>
+</table></div>
+
+<pre><span id="VALisInSortedList"><span class="keyword">val</span> isInSortedList</span> : <code class="type"><a href="SortedList.html#TYPEptr_var">ptr_var</a> -> <a href="SortedList.html#TYPEptr_var">ptr_var</a> list -> bool</code></pre><div class="info ">
+Return true iff the element is in the sorted list. In linear time in the worst case.<br>
+<b>Returns</b> Is <code class="code">element</code> in <code class="code">l</code><br>
+</div>
+<div class="param_info"><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+element</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="SortedList.html#TYPEptr_var">ptr_var</a></code><br>
+The pointer variable to find
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+l</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="SortedList.html#TYPEptr_var">ptr_var</a> list</code><br>
+The abstract domain of pointer variables in which we search
+</tr>
+</table>
+</td>
+</tr>
+</table></div>
+</body></html>

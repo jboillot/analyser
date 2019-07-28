@@ -1,0 +1,518 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Analyser" rel="Chapter" href="Analyser.html">
+<link title="Analysis" rel="Chapter" href="Analysis.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="Exceptions" rel="Chapter" href="Exceptions.html">
+<link title="GenericAbstract" rel="Chapter" href="GenericAbstract.html">
+<link title="Options" rel="Chapter" href="Options.html">
+<link title="SpecialVariables" rel="Chapter" href="SpecialVariables.html">
+<link title="SpecificAbstract" rel="Chapter" href="SpecificAbstract.html">
+<link title="Types" rel="Chapter" href="Types.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><title>Index of values</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;</div>
+<h1>Index of values</h1>
+<table>
+<tr><td align="left"><br>A</td></tr>
+<tr><td><a href="GenericAbstract.html#VALaPostAsm">aPostAsm</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Generic forward non-relational abstract interpretation of ASM statements <code class="code">stat</code> The statement which is currently read, <code class="code">shouldGoBackOnJmp</code> Is the statement read in a branch which has not been read before, <code class="code">f</code> A reference to the set of the C functions, <code class="code">callStack</code> The call stack, <code class="code">stack</code> The memory stack, <code class="code">env</code> The environment, <code class="code">context</code> The context
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALaPostAsmBlock">aPostAsmBlock</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Generic forward non-relational abstract interpretation of ASM blocks <code class="code">pre_loc</code> The entry location of <code class="code">block</code>, <code class="code">block</code> The block of ASM statement to read, <code class="code">shouldGoBackOnJmp</code> Is the statement read in a branch which has not been read before, <code class="code">f</code> A reference to the set of C functions, <code class="code">callStack</code> The call stack, <code class="code">stack</code> The memory stack, <code class="code">env</code> The environment, <code class="code">context</code> The context
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALaPostC">aPostC</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Generic forward non-relational abstract interpretation of C statements <code class="code">stat</code> The C statement, <code class="code">shouldGoBackOnJmp</code> Is the statement read in a branch which has not been read before, <code class="code">f</code> A reference to the C functions, <code class="code">callStack</code> The call stack, <code class="code">lastAsmStack</code> The stack state of the last ASM statement, <code class="code">env</code> The environment, <code class="code">context</code> The context
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALaPostCBlock">aPostCBlock</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Generic forward non-relational abstract interpretation of C blocks <code class="code">program</code> The block of C statements, <code class="code">shouldGoBackOnJmp</code> Is the statement read in a branch which has not been read before, <code class="code">f</code> A reference to the C functions, <code class="code">callStack</code> The call stack, <code class="code">lastAsmStack</code> The stack state of the last ASM statement, <code class="code">env</code> The environment, <code class="code">context</code> The context
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALaPostGlobalC">aPostGlobalC</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Generic forward non-relational abstract interpretation of global statement <code class="code">pre_loc</code> The location before the global statement, <code class="code">stat</code> The global statement, <code class="code">post_loc</code> The location after the global statement, <code class="code">f</code> A reference to the set of C functions, <code class="code">env</code> The environement, <code class="code">context</code> The context
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALaPostProgram">aPostProgram</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Generic foward non-relational abstract interpretation of a block of global statements <code class="code">pre_loc</code> The location before the first global statement of the block, <code class="code">program</code> The block of global statements, <code class="code">f</code> A reference to the set of C functions, <code class="code">env</code> The environment, <code class="code">context</code> The context
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALabexp">abexp</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Generic abstract interpretation of boolean expression <code class="code">b</code> The boolean expression, <code class="code">context</code> The context, <code class="code">env</code> The environment, perhaps it will be modified
+</div>
+</td></tr>
+<tr><td><a href="SpecificAbstract.html#VALabexpArithBin">abexpArithBin</a> [<a href="SpecificAbstract.html">SpecificAbstract</a>]</td>
+<td><div class="info">
+Specific abstract interpretation of binary boolean operators with arithmetics operands <code class="code">a1</code> The abstract domain of the first operand, <code class="code">op</code> The arithmetic to boolean binary operator, <code class="code">a2</code> The abstract domain of the second operand
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALabexpBoolBin">abexpBoolBin</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Generic abstract interpretation of binary boolean operators <code class="code">env1</code> The possible environment in which the first operand is satisfied, <code class="code">context1IsBot</code> Is the context associated to <code class="code">env1</code> bottom, <code class="code">op</code> The binary boolean operator, <code class="code">env2</code> The possible environment in which the second operand is satisfied, <code class="code">context2IsBot</code> Is the context associated to <code class="code">env2</code> bottom
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALabstrD2string">abstrD2string</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Deserialize an abstract domain <code class="code">value</code> The abstract domain
+</div>
+</td></tr>
+<tr><td><a href="Types.html#VALabstrMax">abstrMax</a> [<a href="Types.html">Types</a>]</td>
+<td><div class="info">
+Maximum number
+</div>
+</td></tr>
+<tr><td><a href="Types.html#VALabstrMin">abstrMin</a> [<a href="Types.html">Types</a>]</td>
+<td><div class="info">
+Minimum number
+</div>
+</td></tr>
+<tr><td><a href="Types.html#VALabstrTop">abstrTop</a> [<a href="Types.html">Types</a>]</td>
+<td><div class="info">
+Top element of the abstract domains
+</div>
+</td></tr>
+<tr><td><a href="Utils.html#VALaddLocationsProgram">addLocationsProgram</a> [<a href="Utils.html">Utils</a>]</td>
+<td><div class="info">
+Adds locations to an unlocated program <code class="code">program</code> The unlocated program
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALaddVarToContext">addVarToContext</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Adds an undefined variable to a context and returns the new context <code class="code">vn</code> The name of the variable, <code class="code">value</code> The value of the variable that we want to set, <code class="code">env</code> The environment, <code class="code">context</code> The context
+</div>
+</td></tr>
+<tr><td><a href="SpecificAbstract.html#VALalpha">alpha</a> [<a href="SpecificAbstract.html">SpecificAbstract</a>]</td>
+<td><div class="info">
+Abstraction of a real element <code class="code">real_elem</code> The real element
+</div>
+</td></tr>
+<tr><td><a href="Analysis.html#VALanalyseProgram">analyseProgram</a> [<a href="Analysis.html">Analysis</a>]</td>
+<td><div class="info">
+Analyse a program and write results of this analysis or exceptions encountered <code class="code">l</code> The initial location of <code class="code">program</code>, <code class="code">program</code> The program already located to analyse
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALareEnvironmentEqual">areEnvironmentEqual</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Test equality of two environments <code class="code">e1</code> The first environment, <code class="code">e2</code> The second environment
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALargs2string">args2string</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Deserialize arguments of a C function (which is a list of arithmetic expressions) <code class="code">args</code> The arguments
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALargs_def2string">args_def2string</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Deserialize definition of arguments of a C function <code class="code">args</code> The definition of the arguments
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALarith_expr2string">arith_expr2string</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Deserialize arithmetic expressions <code class="code">a</code> The arithmetic expression
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALarith_expr_needs_parenthesis">arith_expr_needs_parenthesis</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Remove sometimes some parenthesis <code class="code">a</code> An arithmetic expression
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALasm_expr2string">asm_expr2string</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Deserialize ASM expression <code class="code">ae</code> The ASM expression
+</div>
+</td></tr>
+<tr><td align="left"><br>B</td></tr>
+<tr><td><a href="GenericAbstract.html#VALbaexp">baexp</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Backward abstract semantics of arithmetic expressions <code class="code">a</code> An arithmetic expression, <code class="code">context</code> The context in which the arithmetic expression is performed, <code class="code">p</code> The domain in which the evaluation of the arithmetic expression has to be, <code class="code">env</code> The environment in which the arithmetic expression is performed, perhaps it will be modified
+</div>
+</td></tr>
+<tr><td><a href="SpecificAbstract.html#VALbaexpBin">baexpBin</a> [<a href="SpecificAbstract.html">SpecificAbstract</a>]</td>
+<td><div class="info">
+Backward abstract semantics of arithmetic binary operators <code class="code">a1</code> The abstract domain of the first operand, <code class="code">op</code> The arithmetic to boolean binary operator, <code class="code">a2</code> The abstract domain of the second operand, <code class="code">p</code> The abstract domain in which we want the result of the operation
+</div>
+</td></tr>
+<tr><td><a href="SpecificAbstract.html#VALbaexpUna">baexpUna</a> [<a href="SpecificAbstract.html">SpecificAbstract</a>]</td>
+<td><div class="info">
+Backward abstract semantics of arithmetic unary operators <code class="code">op</code> The arithmetic unary operator, <code class="code">a</code> The abstract domain of the operand, <code class="code">p</code> The abstract domain in which we want the result of the operation
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALblock_c2string">block_c2string</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Deserialize block of C statements <code class="code">stat</code> The block of C statements
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALbool_expr2string">bool_expr2string</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Deserialize boolean expressions <code class="code">b</code> The boolean expression
+</div>
+</td></tr>
+<tr><td align="left"><br>C</td></tr>
+<tr><td><a href="GenericAbstract.html#VALcontextMerge">contextMerge</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Merge two contexts by returning the variables which are both represented by the same ids.
+</div>
+</td></tr>
+<tr><td align="left"><br>E</td></tr>
+<tr><td><a href="SpecialVariables.html#VALeax_reg">eax_reg</a> [<a href="SpecialVariables.html">SpecialVariables</a>]</td>
+<td><div class="info">
+Variable name of the register EAX
+</div>
+</td></tr>
+<tr><td><a href="SpecialVariables.html#VALebx_reg">ebx_reg</a> [<a href="SpecialVariables.html">SpecialVariables</a>]</td>
+<td><div class="info">
+Variable name of the register EBX
+</div>
+</td></tr>
+<tr><td><a href="SpecialVariables.html#VALecx_reg">ecx_reg</a> [<a href="SpecialVariables.html">SpecialVariables</a>]</td>
+<td><div class="info">
+Variable name of the register ECX
+</div>
+</td></tr>
+<tr><td><a href="SpecialVariables.html#VALedx_reg">edx_reg</a> [<a href="SpecialVariables.html">SpecialVariables</a>]</td>
+<td><div class="info">
+Variable name of the register EDX
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALenvironmentJoin">environmentJoin</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Joins two environment by joining all the ids.
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALenvironmentMeet">environmentMeet</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Meet two environment by meeting all the ids.
+</div>
+</td></tr>
+<tr><td><a href="Exceptions.html#VALexception_type2string">exception_type2string</a> [<a href="Exceptions.html">Exceptions</a>]</td>
+<td><div class="info">
+Give the description of each exception type <code class="code">t</code> The type of the exception
+</div>
+</td></tr>
+<tr><td><a href="Exceptions.html#VALexceptions">exceptions</a> [<a href="Exceptions.html">Exceptions</a>]</td>
+<td><div class="info">
+The list of the current exceptions
+</div>
+</td></tr>
+<tr><td align="left"><br>F</td></tr>
+<tr><td><a href="GenericAbstract.html#VALfaexp">faexp</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Forward abstract semantics of arithmetic expressions <code class="code">a</code> An arithmetic expression, <code class="code">context</code> The context in which the arithmetic expression is performed, <code class="code">env</code> The environment in which the arithmetic expression is performed, perhaps it will be modified
+</div>
+</td></tr>
+<tr><td><a href="SpecificAbstract.html#VALfaexpBin">faexpBin</a> [<a href="SpecificAbstract.html">SpecificAbstract</a>]</td>
+<td><div class="info">
+Forward abstract semantics of arithmetic binary operators <code class="code">a1</code> The abstract domain of the first operand, <code class="code">op</code> The arithmetic binary operator, <code class="code">a2</code> The abstract domain of the second operand
+</div>
+</td></tr>
+<tr><td><a href="SpecificAbstract.html#VALfaexpUna">faexpUna</a> [<a href="SpecificAbstract.html">SpecificAbstract</a>]</td>
+<td><div class="info">
+Forward abstract semantics of arithmetic unary operators <code class="code">op</code> The arithmetic unary operator, <code class="code">a</code> The abstract domain of the operand
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALforgetNewVariables">forgetNewVariables</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Remove from the environment the variables which have been added in the <code class="code">newContext</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>G</td></tr>
+<tr><td><a href="GenericAbstract.html#VALgetAsmValue">getAsmValue</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Get the abstract interpretation of an ASM expression <code class="code">ae</code> The ASM expression, <code class="code">context</code> The context, <code class="code">env</code> The environment
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALgetLastFunction">getLastFunction</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Get the C function in which a location is <code class="code">l</code> The location, <code class="code">f</code> The reference to the set of the C functions which are known
+</div>
+</td></tr>
+<tr><td><a href="Utils.html#VALgetLocationNumber">getLocationNumber</a> [<a href="Utils.html">Utils</a>]</td>
+<td><div class="info">
+Return the number associated to a location <code class="code">l</code> The location
+</div>
+</td></tr>
+<tr><td><a href="Utils.html#VALgetRegNameVar">getRegNameVar</a> [<a href="Utils.html">Utils</a>]</td>
+<td><div class="info">
+Return the variable name of a register <code class="code">reg</code> The register
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALgetVar">getVar</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Return a variable at a location in an environment <code class="code">context</code> The context in which <code class="code">vn</code> is, <code class="code">vn</code> The name of the variable, <code class="code">env</code> The environment in which the variable will be searched
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALglobal_statement2string">global_statement2string</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Deserialize global statements <code class="code">stat</code> The global statement
+</div>
+</td></tr>
+<tr><td align="left"><br>H</td></tr>
+<tr><td><a href="Exceptions.html#VALhandleException">handleException</a> [<a href="Exceptions.html">Exceptions</a>]</td>
+<td><div class="info">
+Handle an exception and print the associated error <code class="code">exception</code> The exception
+</div>
+</td></tr>
+<tr><td><a href="Exceptions.html#VALhandleExceptions">handleExceptions</a> [<a href="Exceptions.html">Exceptions</a>]</td>
+<td><div class="info">
+Handle every exception in chronological order
+</div>
+</td></tr>
+<tr><td align="left"><br>I</td></tr>
+<tr><td><a href="GenericAbstract.html#VALinitFunction">initFunction</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Initialize the call stack in order to prepare it before the call of a function <code class="code">cCall</code> Is it a call to a C function (respectively ASM function), <code class="code">callStack</code> A reference to the call stack
+</div>
+</td></tr>
+<tr><td><a href="Utils.html#VALinvMax">invMax</a> [<a href="Utils.html">Utils</a>]</td>
+<td><div class="info">
+Returns the inverse of the maximum where a et b are already inversed <code class="code">a</code> 1/<code class="code">c</code>, <code class="code">b</code> 1/<code class="code">d</code>
+</div>
+</td></tr>
+<tr><td><a href="Utils.html#VALinvMin">invMin</a> [<a href="Utils.html">Utils</a>]</td>
+<td><div class="info">
+Returns the inverse of the minimum where a et b are already inversed <code class="code">a</code> 1/<code class="code">c</code>, <code class="code">b</code> 1/<code class="code">d</code>
+</div>
+</td></tr>
+<tr><td><a href="SpecificAbstract.html#VALisInAbstractDomain">isInAbstractDomain</a> [<a href="SpecificAbstract.html">SpecificAbstract</a>]</td>
+<td><div class="info">
+Return true iff <code class="code">n</code> is the abstract domain <code class="code">p</code>.
+</div>
+</td></tr>
+<tr><td><a href="SpecialVariables.html#VALis_register">is_register</a> [<a href="SpecialVariables.html">SpecialVariables</a>]</td>
+<td><div class="info">
+Is a variable name a register's one <code class="code">vn</code> The name of the variable
+</div>
+</td></tr>
+<tr><td align="left"><br>J</td></tr>
+<tr><td><a href="SpecificAbstract.html#VALjoin">join</a> [<a href="SpecificAbstract.html">SpecificAbstract</a>]</td>
+<td><div class="info">
+Joins two abstract domains <code class="code">a1</code> The first abstract domain, <code class="code">a2</code> The second abstract domain
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALjoinMemoryStack">joinMemoryStack</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Join the abstract values of two memory stacks <code class="code">s1</code> The first memory stack, <code class="code">s2</code> The second memory stack
+</div>
+</td></tr>
+<tr><td align="left"><br>L</td></tr>
+<tr><td><a href="Types.html#VALlabels">labels</a> [<a href="Types.html">Types</a>]</td>
+<td><div class="info">
+Map which associates all the labels which have been encountered with their locations
+</div>
+</td></tr>
+<tr><td><a href="SpecificAbstract.html#VALlastStat">lastStat</a> [<a href="SpecificAbstract.html">SpecificAbstract</a>]</td>
+<td><div class="info">
+Last statement read.
+</div>
+</td></tr>
+<tr><td><a href="Analysis.html#VALlastStat">lastStat</a> [<a href="Analysis.html">Analysis</a>]</td>
+<td><div class="info">
+Analyse a program and write results of this analysis or exceptions encountered <code class="code">l</code> The initial location of <code class="code">program</code>, <code class="code">program</code> The program already located to analyse
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALlfp">lfp</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Calculates the least fixpoint of <code class="code">env</code> by the function <code class="code">e1</code> <code class="code">env</code> The initial environment, <code class="code">e1</code> The function to apply on the environment until we have a fixpoint (or an over-approximation of it if we use a widening function), <code class="code">context</code> The initial context, <code class="code">lastStack</code> The initial memory stack
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALloc2string">loc2string</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Deserialize location <code class="code">l</code> The location
+</div>
+</td></tr>
+<tr><td align="left"><br>M</td></tr>
+<tr><td><a href="Analyser.html#VALmain">main</a> [<a href="Analyser.html">Analyser</a>]</td>
+<td><div class="info">
+Entry point of the program.
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALmatchAsmArgs">matchAsmArgs</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Adds the arguments from a memory stack to a context by a C function's definition <code class="code">context</code> The context, <code class="code">args_def_reversed</code> The definition of the arguments that the C function is waiting for, <code class="code">stack</code> The memory stack, <code class="code">env</code> The environment
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALmatchCArgs">matchCArgs</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Add the abstract interpretation of a list of variables by the definition of a C function <code class="code">args_def</code> The definition of the arguments of a C function, <code class="code">args</code> The list of the arithmetic expressions provided, <code class="code">contextToEnhance</code> The context to update, <code class="code">context</code> The context in which the arithmetic expression will be evaluated, <code class="code">env</code> The environment in which the arithmetic expression will be evaluated and which will be enhanced with the new variables
+</div>
+</td></tr>
+<tr><td><a href="SpecificAbstract.html#VALmeet">meet</a> [<a href="SpecificAbstract.html">SpecificAbstract</a>]</td>
+<td><div class="info">
+Meets two abstract domains <code class="code">a1</code> The first abstract domain, <code class="code">a2</code> The second abstract domain
+</div>
+</td></tr>
+<tr><td><a href="Utils.html#VALminmax">minmax</a> [<a href="Utils.html">Utils</a>]</td>
+<td><div class="info">
+Return the minimum and the maximum of a list.
+</div>
+</td></tr>
+<tr><td align="left"><br>N</td></tr>
+<tr><td><a href="Utils.html#VALnotBoolExpr">notBoolExpr</a> [<a href="Utils.html">Utils</a>]</td>
+<td><div class="info">
+Apply the not function to a boolean  <code class="code">b</code> The initial boolean expression
+</div>
+</td></tr>
+<tr><td align="left"><br>P</td></tr>
+<tr><td><a href="GenericAbstract.html#VALpostlude_asm">postlude_asm</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Remove the registers from a context and in the associated environment after an ASM block <code class="code">context</code> The context
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALprelude_asm">prelude_asm</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Add registers to the context  <code class="code">context</code> The context before the ASM block, <code class="code">env</code> The environment which will be modified
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALprint_callStack">print_callStack</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Print a deserialized version of a call stack <code class="code">stack</code> The reference to a call stack, <code class="code">env</code> The environment
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALprint_context">print_context</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Print a deserialized version of a context <code class="code">context</code> The context, <code class="code">env</code> The environment
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALprint_environment">print_environment</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Print a deserialized version of an environment <code class="code">env</code> The environment
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALprint_memoryStack">print_memoryStack</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Print a deserialized version of a memory stack <code class="code">stack</code> The memory stack
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALprogram2string">program2string</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Deserialize located programs <code class="code">l</code> The entry point of <code class="code">program</code>, <code class="code">program</code> The C program with inline assembly
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALptrVar2string">ptrVar2string</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Deserialize a pointer variable <code class="code">v</code> The pointer variable
+</div>
+</td></tr>
+<tr><td align="left"><br>R</td></tr>
+<tr><td><a href="Exceptions.html#VALraiseException">raiseException</a> [<a href="Exceptions.html">Exceptions</a>]</td>
+<td><div class="info">
+Raise an exception <code class="code">t</code> The type of the exception, <code class="code">generic_stat</code> The located statement in which the exception has been raised
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALraiseReturn">raiseReturn</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Raise a return (called by return/ret statement), join the return code, the return context, the return environment and the memory stack with the last ones saved <code class="code">cCall</code> Is the statement which calls it a return (respectively ret), <code class="code">addReturnPossibility</code> Do we have to wait for another return/ret, <code class="code">returnCode</code> The code that has been returned, <code class="code">returnContext</code> The context that has been returned, <code class="code">returnEnv</code> The environment that has been returned, <code class="code">callStack</code> A reference to the actual call stack, <code class="code">stack</code> The memory stack to return
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALreg2string">reg2string</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Deserialize register <code class="code">reg</code> The register
+</div>
+</td></tr>
+<tr><td><a href="Utils.html#VALremoveCVariables">removeCVariables</a> [<a href="Utils.html">Utils</a>]</td>
+<td><div class="info">
+Remove the C variables from a context.
+</div>
+</td></tr>
+<tr><td><a href="Utils.html#VALremoveLabelsProgram">removeLabelsProgram</a> [<a href="Utils.html">Utils</a>]</td>
+<td><div class="info">
+Remove the labels of the program and replace them by the locations associated <code class="code">program</code> The located program
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALreset_registers">reset_registers</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Reset the value of all registers except EAX which is replaced by a specified value <code class="code">context</code> The context, <code class="code">env</code> The environment which will be modified, <code class="code">eax_value</code> The new value of EAX
+</div>
+</td></tr>
+<tr><td align="left"><br>S</td></tr>
+<tr><td><a href="GenericAbstract.html#VALsetRegisters">setRegisters</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Replace the registers of a context by the registers of another one <code class="code">c1</code> The context in which the registers will be changed, <code class="code">c2</code> The context from which the registers will be get, <code class="code">env</code> The environment which will be modified
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALstat_a2string">stat_a2string</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Deserialize ASM statements <code class="code">stat</code> The ASM statement, <code class="code">indent</code> The initial prefix of the line
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALstat_a_block2string">stat_a_block2string</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Deserialize block of ASM statements <code class="code">block</code> The block of ASM statements, <code class="code">indent</code> The initial indent of each line
+</div>
+</td></tr>
+<tr><td><a href="Debug.html#VALstat_c2string">stat_c2string</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Deserialize C statement <code class="code">stat</code> The C statement, <code class="code">indent</code> The initial prefix of the line
+</div>
+</td></tr>
+<tr><td align="left"><br>T</td></tr>
+<tr><td><a href="Debug.html#VALtype2string">type2string</a> [<a href="Debug.html">Debug</a>]</td>
+<td><div class="info">
+Deserialize type <code class="code">t</code> C type of variable
+</div>
+</td></tr>
+<tr><td align="left"><br>U</td></tr>
+<tr><td><a href="GenericAbstract.html#VALupdateVarInContext">updateVarInContext</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Update an existing variable in a context and returns the new context <code class="code">vn</code> The name of the variable, <code class="code">value</code> The value of the variable that we want to set, <code class="code">context</code> The context, <code class="code">env</code> The environment
+</div>
+</td></tr>
+<tr><td align="left"><br>V</td></tr>
+<tr><td><a href="GenericAbstract.html#VALvar_id">var_id</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+The last id used in an environment
+</div>
+</td></tr>
+<tr><td><a href="Options.html#VALverbose">verbose</a> [<a href="Options.html">Options</a>]</td>
+<td><div class="info">
+Do we have to print backtrace when an exception is encountered
+</div>
+</td></tr>
+<tr><td align="left"><br>W</td></tr>
+<tr><td><a href="SpecificAbstract.html#VALwidening">widening</a> [<a href="SpecificAbstract.html">SpecificAbstract</a>]</td>
+<td><div class="info">
+The widening function which ensure termination of lfp <code class="code">a1</code> The first abstract domain, <code class="code">a2</code> The second abstract domain
+</div>
+</td></tr>
+<tr><td><a href="GenericAbstract.html#VALwideningOnEnvironments">wideningOnEnvironments</a> [<a href="GenericAbstract.html">GenericAbstract</a>]</td>
+<td><div class="info">
+Apply widening on two environments by applying the widening to all the abstract domains of their ids.
+</div>
+</td></tr>
+<tr><td><a href="Options.html#VALwithoutLocs">withoutLocs</a> [<a href="Options.html">Options</a>]</td>
+<td><div class="info">
+Do we have to hide locations in the printed version of the program
+</div>
+</td></tr>
+<tr><td><a href="Options.html#VALwithoutWidening1">withoutWidening1</a> [<a href="Options.html">Options</a>]</td>
+<td><div class="info">
+Do we have to remove the widening and to compute the lfp by enlarging abstract domains
+</div>
+</td></tr>
+<tr><td><a href="Options.html#VALwithoutWidening2">withoutWidening2</a> [<a href="Options.html">Options</a>]</td>
+<td><div class="info">
+Do we have to remove the widening and to compute the lfp by excluding cases and then join all the cases
+</div>
+</td></tr>
+</table>
+</body>
+</html>

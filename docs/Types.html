@@ -1,0 +1,810 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="SpecificAbstract.html">
+<link rel="next" href="Utils.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Analyser" rel="Chapter" href="Analyser.html">
+<link title="Analysis" rel="Chapter" href="Analysis.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="Exceptions" rel="Chapter" href="Exceptions.html">
+<link title="GenericAbstract" rel="Chapter" href="GenericAbstract.html">
+<link title="Options" rel="Chapter" href="Options.html">
+<link title="SpecialVariables" rel="Chapter" href="SpecialVariables.html">
+<link title="SpecificAbstract" rel="Chapter" href="SpecificAbstract.html">
+<link title="Types" rel="Chapter" href="Types.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><title>Types</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="SpecificAbstract.html" title="SpecificAbstract">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Utils.html" title="Utils">Next</a>
+</div>
+<h1>Module <a href="type_Types.html">Types</a></h1>
+
+<pre><span class="keyword">module</span> Types: <code class="code">sig</code> <a href="Types.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Types used during the analysis<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEname_var"><span class="keyword">type</span> <code class="type"></code>name_var</span> = <code class="type">string</code> </pre>
+<div class="info ">
+Name of variables, functions and labels<br>
+</div>
+
+
+<pre><code><span id="TYPEloc"><span class="keyword">type</span> <code class="type"></code>loc</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTloc.Loc_c"><span class="constructor">Loc_c</span></span> <span class="keyword">of</span> <code class="type">int</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTloc.Loc_a"><span class="constructor">Loc_a</span></span> <span class="keyword">of</span> <code class="type">int</code></code></td>
+
+</tr></table>
+
+<div class="info ">
+Locations of statements in programs<br>
+</div>
+
+
+<pre><code><span id="TYPEtype_c"><span class="keyword">type</span> <code class="type"></code>type_c</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtype_c.Int_c"><span class="constructor">Int_c</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtype_c.Ptr"><span class="constructor">Ptr</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEtype_c">type_c</a></code></code></td>
+
+</tr></table>
+
+<div class="info ">
+Type of C variables<br>
+</div>
+
+
+<pre><code><span id="TYPEboolOpBoolBin"><span class="keyword">type</span> <code class="type"></code>boolOpBoolBin</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTboolOpBoolBin.And"><span class="constructor">And</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTboolOpBoolBin.Or"><span class="constructor">Or</span></span></code></td>
+
+</tr></table>
+
+<div class="info ">
+Binary operators which are of type bool -&gt; bool -&gt; bool<br>
+</div>
+
+
+<pre><code><span id="TYPEboolOpArithBin"><span class="keyword">type</span> <code class="type"></code>boolOpArithBin</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTboolOpArithBin.Eq"><span class="constructor">Eq</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTboolOpArithBin.Neq"><span class="constructor">Neq</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTboolOpArithBin.Lt"><span class="constructor">Lt</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTboolOpArithBin.Gt"><span class="constructor">Gt</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTboolOpArithBin.Le"><span class="constructor">Le</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTboolOpArithBin.Ge"><span class="constructor">Ge</span></span></code></td>
+
+</tr></table>
+
+<div class="info ">
+Binary operators which are of type int -&gt; int -&gt; bool<br>
+</div>
+
+
+<pre><code><span id="TYPEarithOpArithBin"><span class="keyword">type</span> <code class="type"></code>arithOpArithBin</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTarithOpArithBin.Plus"><span class="constructor">Plus</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTarithOpArithBin.Minus"><span class="constructor">Minus</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTarithOpArithBin.Times"><span class="constructor">Times</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTarithOpArithBin.Div"><span class="constructor">Div</span></span></code></td>
+
+</tr></table>
+
+<div class="info ">
+Binary operators which are of type int -&gt; int -&gt; int<br>
+</div>
+
+
+<pre><code><span id="TYPEboolOpBoolUna"><span class="keyword">type</span> <code class="type"></code>boolOpBoolUna</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTboolOpBoolUna.Not"><span class="constructor">Not</span></span></code></td>
+
+</tr></table>
+
+<div class="info ">
+Unary operators which are of type bool -&gt; bool<br>
+</div>
+
+
+<pre><code><span id="TYPEarithOpArithUna"><span class="keyword">type</span> <code class="type"></code>arithOpArithUna</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTarithOpArithUna.MinusUna"><span class="constructor">MinusUna</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTarithOpArithUna.BitwiseNot"><span class="constructor">BitwiseNot</span></span></code></td>
+
+</tr></table>
+
+<div class="info ">
+Unary operators which are of type int -&gt; bool<br>
+</div>
+
+
+<pre><code><span id="TYPEreg32"><span class="keyword">type</span> <code class="type"></code>reg32</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTreg32.EAX"><span class="constructor">EAX</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTreg32.EBX"><span class="constructor">EBX</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTreg32.ECX"><span class="constructor">ECX</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTreg32.EDX"><span class="constructor">EDX</span></span></code></td>
+
+</tr></table>
+
+<div class="info ">
+Registers actually implemented in the analyser<br>
+</div>
+
+
+<pre><code><span id="TYPEasm_expr"><span class="keyword">type</span> <code class="type"></code>asm_expr</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTasm_expr.AsmReg"><span class="constructor">AsmReg</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEreg32">reg32</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTasm_expr.AsmPtr"><span class="constructor">AsmPtr</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEasm_expr">asm_expr</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTasm_expr.AsmVar"><span class="constructor">AsmVar</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEname_var">name_var</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTasm_expr.AsmCst"><span class="constructor">AsmCst</span></span> <span class="keyword">of</span> <code class="type">Z.t</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTasm_expr.AsmLbl"><span class="constructor">AsmLbl</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEname_var">name_var</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTasm_expr.AsmLblLoc"><span class="constructor">AsmLblLoc</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEloc">loc</a></code></code></td>
+
+</tr></table>
+
+<div class="info ">
+ASM expression aka operands of ASM statements<br>
+</div>
+
+
+<pre><code><span id="TYPEptr_var"><span class="keyword">type</span> <code class="type"></code>ptr_var</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTptr_var.PtrVar"><span class="constructor">PtrVar</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEptr_var">ptr_var</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTptr_var.LastPtrVar"><span class="constructor">LastPtrVar</span></span> <span class="keyword">of</span> <code class="type">string</code></code></td>
+
+</tr></table>
+
+<div class="info ">
+Pointer induction to a variable name<br>
+</div>
+
+
+<pre><code><span id="TYPEstat_c"><span class="keyword">type</span> <code class="type"></code>stat_c</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_c.Declare"><span class="constructor">Declare</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEtype_c">type_c</a> * <a href="Types.html#TYPEname_var">name_var</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_c.DeclareAssign"><span class="constructor">DeclareAssign</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEtype_c">type_c</a> * <a href="Types.html#TYPEname_var">name_var</a> * <a href="Types.html#TYPEarith_expr">arith_expr</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_c.Assign"><span class="constructor">Assign</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEname_var">name_var</a> * <a href="Types.html#TYPEarith_expr">arith_expr</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_c.Return"><span class="constructor">Return</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEarith_expr">arith_expr</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_c.Branch"><span class="constructor">Branch</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEbool_expr">bool_expr</a> * <a href="Types.html#TYPEloc_stat_c">loc_stat_c</a> * <a href="Types.html#TYPEloc_stat_c">loc_stat_c</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_c.BranchWithoutLoc"><span class="constructor">BranchWithoutLoc</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEbool_expr">bool_expr</a> * <a href="Types.html#TYPEstat_c">stat_c</a> list * <a href="Types.html#TYPEstat_c">stat_c</a> list</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_c.Asm"><span class="constructor">Asm</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEloc_stat_a">loc_stat_a</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_c.AsmWithoutLoc"><span class="constructor">AsmWithoutLoc</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEstat_a">stat_a</a> list</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_c.While"><span class="constructor">While</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEbool_expr">bool_expr</a> * <a href="Types.html#TYPEloc_stat_c">loc_stat_c</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_c.WhileWithoutLoc"><span class="constructor">WhileWithoutLoc</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEbool_expr">bool_expr</a> * <a href="Types.html#TYPEstat_c">stat_c</a> list</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_c.CallAssignC"><span class="constructor">CallAssignC</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEname_var">name_var</a> * <a href="Types.html#TYPEname_var">name_var</a> * <a href="Types.html#TYPEarith_expr">arith_expr</a> list</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_c.CallAssignAsm"><span class="constructor">CallAssignAsm</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEname_var">name_var</a> * <a href="Types.html#TYPEloc">loc</a> * <a href="Types.html#TYPEarith_expr">arith_expr</a> list</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_c.PtrAssign"><span class="constructor">PtrAssign</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEptr_var">ptr_var</a> * <a href="Types.html#TYPEarith_expr">arith_expr</a></code></code></td>
+
+</tr></table>
+
+<div class="info ">
+C statements<br>
+</div>
+
+
+<pre><code><span id="TYPEstat_a"><span class="keyword">type</span> <code class="type"></code>stat_a</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_a.Label"><span class="constructor">Label</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEname_var">name_var</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_a.Jmp"><span class="constructor">Jmp</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEasm_expr">asm_expr</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_a.Mov"><span class="constructor">Mov</span></span> <span class="keyword">of</span> <code class="type">(<a href="Types.html#TYPEasm_expr">asm_expr</a> * <a href="Types.html#TYPEasm_expr">asm_expr</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_a.Ret"><span class="constructor">Ret</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_a.Call"><span class="constructor">Call</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEasm_expr">asm_expr</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_a.Push"><span class="constructor">Push</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEasm_expr">asm_expr</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTstat_a.Pop"><span class="constructor">Pop</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEasm_expr">asm_expr</a></code></code></td>
+
+</tr></table>
+
+<div class="info ">
+ASM statements<br>
+</div>
+
+
+<pre><span id="TYPEloc_stat_c"><span class="keyword">type</span> <code class="type"></code>loc_stat_c</span> = <code class="type"><a href="Types.html#TYPEloc">loc</a> * (<a href="Types.html#TYPEstat_c">stat_c</a> * <a href="Types.html#TYPEloc">loc</a>) list</code> </pre>
+<div class="info ">
+Located C block<br>
+</div>
+
+
+<pre><span id="TYPEloc_stat_a"><span class="keyword">type</span> <code class="type"></code>loc_stat_a</span> = <code class="type"><a href="Types.html#TYPEloc">loc</a> * (<a href="Types.html#TYPEstat_a">stat_a</a> * <a href="Types.html#TYPEloc">loc</a>) list</code> </pre>
+<div class="info ">
+Located ASM block<br>
+</div>
+
+
+<pre><code><span id="TYPEarith_expr"><span class="keyword">type</span> <code class="type"></code>arith_expr</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTarith_expr.Var"><span class="constructor">Var</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEname_var">name_var</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTarith_expr.Deref"><span class="constructor">Deref</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEarith_expr">arith_expr</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTarith_expr.Addr"><span class="constructor">Addr</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEname_var">name_var</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTarith_expr.Cons"><span class="constructor">Cons</span></span> <span class="keyword">of</span> <code class="type">Z.t</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTarith_expr.Interval"><span class="constructor">Interval</span></span> <span class="keyword">of</span> <code class="type">Z.t * Z.t</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTarith_expr.ArithArithBinExpr"><span class="constructor">ArithArithBinExpr</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEarith_expr">arith_expr</a> * <a href="Types.html#TYPEarithOpArithBin">arithOpArithBin</a> * <a href="Types.html#TYPEarith_expr">arith_expr</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTarith_expr.ArithArithUnaExpr"><span class="constructor">ArithArithUnaExpr</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEarithOpArithUna">arithOpArithUna</a> * <a href="Types.html#TYPEarith_expr">arith_expr</a></code></code></td>
+
+</tr></table>
+
+<div class="info ">
+C arithmetic expression<br>
+</div>
+
+
+<pre><code><span id="TYPEbool_expr"><span class="keyword">type</span> <code class="type"></code>bool_expr</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbool_expr.True"><span class="constructor">True</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbool_expr.False"><span class="constructor">False</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbool_expr.BoolBinExpr"><span class="constructor">BoolBinExpr</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEbool_expr">bool_expr</a> * <a href="Types.html#TYPEboolOpBoolBin">boolOpBoolBin</a> * <a href="Types.html#TYPEbool_expr">bool_expr</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbool_expr.BoolUnaExpr"><span class="constructor">BoolUnaExpr</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEboolOpBoolUna">boolOpBoolUna</a> * <a href="Types.html#TYPEbool_expr">bool_expr</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTbool_expr.BoolArithBinExpr"><span class="constructor">BoolArithBinExpr</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEarith_expr">arith_expr</a> * <a href="Types.html#TYPEboolOpArithBin">boolOpArithBin</a> * <a href="Types.html#TYPEarith_expr">arith_expr</a></code></code></td>
+
+</tr></table>
+
+<div class="info ">
+C boolean expressions<br>
+</div>
+
+
+<pre><span id="TYPEarguments"><span class="keyword">type</span> <code class="type"></code>arguments</span> = <code class="type">(<a href="Types.html#TYPEtype_c">type_c</a> * <a href="Types.html#TYPEname_var">name_var</a>) list</code> </pre>
+<div class="info ">
+Definition of the arguments of C functions<br>
+</div>
+
+
+<pre><code><span id="TYPEglobal_statement"><span class="keyword">type</span> <code class="type"></code>global_statement</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTglobal_statement.Function"><span class="constructor">Function</span></span> <span class="keyword">of</span> <code class="type">(<a href="Types.html#TYPEtype_c">type_c</a> * <a href="Types.html#TYPEname_var">name_var</a> * <a href="Types.html#TYPEarguments">arguments</a> * <a href="Types.html#TYPEloc_stat_c">loc_stat_c</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTglobal_statement.FunctionWithoutLoc"><span class="constructor">FunctionWithoutLoc</span></span> <span class="keyword">of</span> <code class="type">(<a href="Types.html#TYPEtype_c">type_c</a> * <a href="Types.html#TYPEname_var">name_var</a> * <a href="Types.html#TYPEarguments">arguments</a> * <a href="Types.html#TYPEstat_c">stat_c</a> list)</code></code></td>
+
+</tr></table>
+
+<div class="info ">
+Statements which are globals. So far, functions.<br>
+</div>
+
+
+<pre><span id="TYPEprogram"><span class="keyword">type</span> <code class="type"></code>program</span> = <code class="type"><a href="Types.html#TYPEloc">loc</a> * (<a href="Types.html#TYPEglobal_statement">global_statement</a> * <a href="Types.html#TYPEloc">loc</a>) list</code> </pre>
+<div class="info ">
+C program with inline assembly<br>
+</div>
+
+
+<pre><code><span id="TYPEgeneric_stat_loc"><span class="keyword">type</span> <code class="type"></code>generic_stat_loc</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgeneric_stat_loc.StatC"><span class="constructor">StatC</span></span> <span class="keyword">of</span> <code class="type">(<a href="Types.html#TYPEloc">loc</a> * <a href="Types.html#TYPEstat_c">stat_c</a> * <a href="Types.html#TYPEloc">loc</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTgeneric_stat_loc.StatA"><span class="constructor">StatA</span></span> <span class="keyword">of</span> <code class="type">(<a href="Types.html#TYPEloc">loc</a> * <a href="Types.html#TYPEstat_a">stat_a</a> * <a href="Types.html#TYPEloc">loc</a>)</code></code></td>
+
+</tr></table>
+
+<div class="info ">
+Statement with its location associated<br>
+</div>
+
+
+<pre><span class="keyword">module</span> <a href="Types.IdSet.html">IdSet</a>: <code class="type">Set.Make</code><code class="code">(</code><code class="code">sig</code></pre><div class="sig_block">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">int</code> </pre>
+
+
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">'a -> 'a -> int</code></pre></div>
+<pre><code class="code">end</code><code class="code">)</code></pre><div class="info">
+Set wich contains ids of variables, used to represent abstact domain of pointers
+</div>
+
+<pre><code><span id="TYPEabstrD"><span class="keyword">type</span> <code class="type"></code>abstrD</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTabstrD.AbstrD"><span class="constructor">AbstrD</span></span> <span class="keyword">of</span> <code class="type">(Z.t * Z.t)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTabstrD.AbstrPtr"><span class="constructor">AbstrPtr</span></span> <span class="keyword">of</span> <code class="type">IdSet.t</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTabstrD.AbstrLoc"><span class="constructor">AbstrLoc</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEloc">loc</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTabstrD.AbstrBot"><span class="constructor">AbstrBot</span></span></code></td>
+
+</tr></table>
+
+<div class="info ">
+Abstract domain<br>
+</div>
+
+
+<pre><code><span id="TYPErealD"><span class="keyword">type</span> <code class="type"></code>realD</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrealD.RealD"><span class="constructor">RealD</span></span> <span class="keyword">of</span> <code class="type">Z.t list</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrealD.RealBot"><span class="constructor">RealBot</span></span></code></td>
+
+</tr></table>
+
+<div class="info ">
+Real domain<br>
+</div>
+
+
+<pre><span id="VALabstrMin"><span class="keyword">val</span> abstrMin</span> : <code class="type">Z.t</code></pre><div class="info ">
+Minimum number<br>
+</div>
+
+<pre><span id="VALabstrMax"><span class="keyword">val</span> abstrMax</span> : <code class="type">Z.t</code></pre><div class="info ">
+Maximum number<br>
+</div>
+
+<pre><span id="VALabstrTop"><span class="keyword">val</span> abstrTop</span> : <code class="type"><a href="Types.html#TYPEabstrD">abstrD</a></code></pre><div class="info ">
+Top element of the abstract domains<br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Types.Context.html">Context</a>: <code class="type">Map.Make</code><code class="code">(</code><code class="type">String</code><code class="code">)</code></pre><div class="info">
+Map with variable names as key
+</div>
+
+<pre><code><span id="TYPEabstrContext"><span class="keyword">type</span> <code class="type"></code>abstrContext</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTabstrContext.AbstrContext"><span class="constructor">AbstrContext</span></span> <span class="keyword">of</span> <code class="type">int Context.t</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTabstrContext.GoForward"><span class="constructor">GoForward</span></span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEloc">loc</a> * <a href="Types.html#TYPEabstrContext">abstrContext</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTabstrContext.AbstrContextBot"><span class="constructor">AbstrContextBot</span></span></code></td>
+
+</tr></table>
+
+<div class="info ">
+Context<br>
+</div>
+
+
+<pre><span id="TYPEmemoryStack"><span class="keyword">type</span> <code class="type"></code>memoryStack</span> = <code class="type"><a href="Types.html#TYPEabstrD">abstrD</a> list</code> </pre>
+<div class="info ">
+Memory stack<br>
+</div>
+
+
+<pre><span class="keyword">module</span> <a href="Types.Environment.html">Environment</a>: <code class="type">Map.Make</code><code class="code">(</code><code class="code">sig</code></pre><div class="sig_block">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">int</code> </pre>
+
+
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">'a -> 'a -> int</code></pre></div>
+<pre><code class="code">end</code><code class="code">)</code></pre><div class="info">
+Map with id as keys
+</div>
+
+<pre><span id="TYPEabstrEnvironment"><span class="keyword">type</span> <code class="type"></code>abstrEnvironment</span> = <code class="type"><a href="Types.html#TYPEabstrD">abstrD</a> Environment.t</code> </pre>
+<div class="info ">
+Environment<br>
+</div>
+
+
+<pre><span class="keyword">module</span> <a href="Types.LocMap.html">LocMap</a>: <code class="type">Map.Make</code><code class="code">(</code><code class="code">sig</code></pre><div class="sig_block">
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Types.html#TYPEloc">Types.loc</a></code> </pre>
+
+
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">'a -> 'a -> int</code></pre></div>
+<pre><code class="code">end</code><code class="code">)</code></pre>
+<pre><span id="TYPEfunctionContext"><span class="keyword">type</span> <code class="type"></code>functionContext</span> = <code class="type">(<a href="Types.html#TYPEglobal_statement">global_statement</a> * <a href="Types.html#TYPEabstrContext">abstrContext</a>) LocMap.t</code> </pre>
+<div class="info ">
+Map which associates locations to their C functions (and contexts) associated<br>
+</div>
+
+
+<pre><span id="TYPEcallStack"><span class="keyword">type</span> <code class="type"></code>callStack</span> = <code class="type">(bool * <a href="Types.html#TYPEabstrD">abstrD</a> * <a href="Types.html#TYPEabstrEnvironment">abstrEnvironment</a> Pervasives.ref *<br>        <a href="Types.html#TYPEabstrContext">abstrContext</a> * <a href="Types.html#TYPEmemoryStack">memoryStack</a>)<br>       Stack.t</code> </pre>
+<div class="info ">
+Call stack (which is really a stack)<br>
+</div>
+
+
+<pre><span id="EXCEPTIONReturnRaised"><span class="keyword">exception</span> ReturnRaised</span> <span class="keyword">of</span> <code class="type"><a href="Types.html#TYPEabstrD">abstrD</a> * <a href="Types.html#TYPEabstrEnvironment">abstrEnvironment</a> Pervasives.ref * <a href="Types.html#TYPEabstrContext">abstrContext</a><br>        * <a href="Types.html#TYPEmemoryStack">memoryStack</a></code></pre>
+<div class="info ">
+A return/ret instruction has been encountered and the function/block of statements is returned with the abstract domain of the value returned, the context and the memory stack associated<br>
+</div>
+
+<pre><span id="EXCEPTIONGoBackward"><span class="keyword">exception</span> GoBackward</span></pre>
+<div class="info ">
+Do we have to go back in the past to start again a branch with more anticipation of a jump<br>
+</div>
+
+<pre><span id="VALlabels"><span class="keyword">val</span> labels</span> : <code class="type"><a href="Types.html#TYPEloc">loc</a> Context.t Pervasives.ref</code></pre><div class="info ">
+Map which associates all the labels which have been encountered with their locations<br>
+</div>
+</body></html>
