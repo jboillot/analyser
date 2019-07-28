@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="GenericAbstract.html">
+<link rel="next" href="SortedList.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Analyser" rel="Chapter" href="Analyser.html">
+<link title="Analysis" rel="Chapter" href="Analysis.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="Exceptions" rel="Chapter" href="Exceptions.html">
+<link title="GenericAbstract" rel="Chapter" href="GenericAbstract.html">
+<link title="Options" rel="Chapter" href="Options.html">
+<link title="SortedList" rel="Chapter" href="SortedList.html">
+<link title="SpecialVariables" rel="Chapter" href="SpecialVariables.html">
+<link title="SpecificAbstract" rel="Chapter" href="SpecificAbstract.html">
+<link title="Types" rel="Chapter" href="Types.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><title>Options</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="GenericAbstract.html" title="GenericAbstract">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="SortedList.html" title="SortedList">Next</a>
+</div>
+<h1>Module <a href="type_Options.html">Options</a></h1>
+
+<pre><span class="keyword">module</span> Options: <code class="code">sig</code> <a href="Options.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Do we have to print backtrace when an exception is encountered<br>
+</div>
+<hr width="100%">
+
+<pre><span id="VALverbose"><span class="keyword">val</span> verbose</span> : <code class="type">bool Pervasives.ref</code></pre>
+<pre><span id="VALwithoutLocs"><span class="keyword">val</span> withoutLocs</span> : <code class="type">bool Pervasives.ref</code></pre><div class="info ">
+Do we have to hide locations in the printed version of the program<br>
+</div>
+
+<pre><span id="VALwithoutWidening1"><span class="keyword">val</span> withoutWidening1</span> : <code class="type">bool Pervasives.ref</code></pre><div class="info ">
+Do we have to remove the widening and to compute the lfp by enlarging abstract domains<br>
+</div>
+
+<pre><span id="VALwithoutWidening2"><span class="keyword">val</span> withoutWidening2</span> : <code class="type">bool Pervasives.ref</code></pre><div class="info ">
+Do we have to remove the widening and to compute the lfp by excluding cases and then join all the cases<br>
+</div>
+</body></html>

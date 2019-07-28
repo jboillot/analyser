@@ -1,0 +1,352 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="SpecialVariables.html">
+<link rel="next" href="Types.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Analyser" rel="Chapter" href="Analyser.html">
+<link title="Analysis" rel="Chapter" href="Analysis.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="Exceptions" rel="Chapter" href="Exceptions.html">
+<link title="GenericAbstract" rel="Chapter" href="GenericAbstract.html">
+<link title="Options" rel="Chapter" href="Options.html">
+<link title="SortedList" rel="Chapter" href="SortedList.html">
+<link title="SpecialVariables" rel="Chapter" href="SpecialVariables.html">
+<link title="SpecificAbstract" rel="Chapter" href="SpecificAbstract.html">
+<link title="Types" rel="Chapter" href="Types.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><title>SpecificAbstract</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="SpecialVariables.html" title="SpecialVariables">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Types.html" title="Types">Next</a>
+</div>
+<h1>Module <a href="type_SpecificAbstract.html">SpecificAbstract</a></h1>
+
+<pre><span class="keyword">module</span> SpecificAbstract: <code class="code">sig</code> <a href="SpecificAbstract.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Methods which depend of the abstract domain. Foundations of the static interpretation.<br>
+</div>
+<hr width="100%">
+<br>
+Methods which depend of the abstract domain. Foundations of the static interpretation.<br>
+
+<pre><span id="VALlastStat"><span class="keyword">val</span> lastStat</span> : <code class="type"><a href="Types.html#TYPEgeneric_stat_loc">Types.generic_stat_loc</a> Pervasives.ref</code></pre><div class="info ">
+Last statement read. Is used to give an explicit error with the statement concerned.<br>
+</div>
+
+<pre><span id="VALalpha"><span class="keyword">val</span> alpha</span> : <code class="type"><a href="Types.html#TYPErealD">Types.realD</a> -> <a href="Types.html#TYPEabstrD">Types.abstrD</a></code></pre><div class="info ">
+Abstraction of a real element<br>
+<b>Returns</b> The abstract element which corresponds to the real one<br>
+</div>
+<div class="param_info"><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+real_elem</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPErealD">Types.realD</a></code><br>
+The real element
+</tr>
+</table>
+</td>
+</tr>
+</table></div>
+
+<pre><span id="VALjoin"><span class="keyword">val</span> join</span> : <code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a> -> <a href="Types.html#TYPEabstrD">Types.abstrD</a> -> <a href="Types.html#TYPEabstrD">Types.abstrD</a></code></pre><div class="info ">
+Joins two abstract domains<br>
+<b>Returns</b> The join of the two abstract domains<br>
+</div>
+<div class="param_info"><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+a1</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a></code><br>
+The first abstract domain
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+a2</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a></code><br>
+The second abstract domain
+</tr>
+</table>
+</td>
+</tr>
+</table></div>
+
+<pre><span id="VALmeet"><span class="keyword">val</span> meet</span> : <code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a> -> <a href="Types.html#TYPEabstrD">Types.abstrD</a> -> <a href="Types.html#TYPEabstrD">Types.abstrD</a></code></pre><div class="info ">
+Meets two abstract domains<br>
+<b>Returns</b> The meet of the two abstract domains<br>
+</div>
+<div class="param_info"><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+a1</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a></code><br>
+The first abstract domain
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+a2</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a></code><br>
+The second abstract domain
+</tr>
+</table>
+</td>
+</tr>
+</table></div>
+
+<pre><span id="VALisInAbstractDomain"><span class="keyword">val</span> isInAbstractDomain</span> : <code class="type">Z.t -> <a href="Types.html#TYPEabstrD">Types.abstrD</a> -> bool</code></pre><div class="info ">
+Return true iff <code class="code">n</code> is the abstract domain <code class="code">p</code>. The concretization function appears here.<br>
+<b>Returns</b> Is the number in the abstract domain<br>
+</div>
+<div class="param_info"><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+n</td>
+<td align="center" valign="top">:</td>
+<td><code class="type">Z.t</code><br>
+A number (not really a real domain which is a set of numbers)
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+p</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a></code><br>
+The abstract domain
+</tr>
+</table>
+</td>
+</tr>
+</table></div>
+
+<pre><span id="VALfaexpUna"><span class="keyword">val</span> faexpUna</span> : <code class="type"><a href="Types.html#TYPEarithOpArithUna">Types.arithOpArithUna</a> -> <a href="Types.html#TYPEabstrD">Types.abstrD</a> -> <a href="Types.html#TYPEabstrD">Types.abstrD</a></code></pre><div class="info ">
+Forward abstract semantics of arithmetic unary operators<br>
+<b>Returns</b> The abstract domain after the application of the operator on the abstract domain provided<br>
+</div>
+<div class="param_info"><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+op</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEarithOpArithUna">Types.arithOpArithUna</a></code><br>
+The arithmetic unary operator
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+a</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a></code><br>
+The abstract domain of the operand
+</tr>
+</table>
+</td>
+</tr>
+</table></div>
+
+<pre><span id="VALfaexpBin"><span class="keyword">val</span> faexpBin</span> : <code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a> -> <a href="Types.html#TYPEarithOpArithBin">Types.arithOpArithBin</a> -> <a href="Types.html#TYPEabstrD">Types.abstrD</a> -> <a href="Types.html#TYPEabstrD">Types.abstrD</a></code></pre><div class="info ">
+Forward abstract semantics of arithmetic binary operators<br>
+<b>Returns</b> The abstract domain after the application of the operator on the two operands<br>
+</div>
+<div class="param_info"><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+a1</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a></code><br>
+The abstract domain of the first operand
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+op</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEarithOpArithBin">Types.arithOpArithBin</a></code><br>
+The arithmetic binary operator
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+a2</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a></code><br>
+The abstract domain of the second operand
+</tr>
+</table>
+</td>
+</tr>
+</table></div>
+
+<pre><span id="VALabexpArithBin"><span class="keyword">val</span> abexpArithBin</span> : <code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a> -><br>       <a href="Types.html#TYPEboolOpArithBin">Types.boolOpArithBin</a> -> <a href="Types.html#TYPEabstrD">Types.abstrD</a> -> <a href="Types.html#TYPEabstrD">Types.abstrD</a> * <a href="Types.html#TYPEabstrD">Types.abstrD</a></code></pre><div class="info ">
+Specific abstract interpretation of binary boolean operators with arithmetics operands<br>
+<b>Returns</b> The pair made of the abstract domain of both operand which respect the property, which is this boolean expression, or an over-approximation of that<br>
+</div>
+<div class="param_info"><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+a1</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a></code><br>
+The abstract domain of the first operand
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+op</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEboolOpArithBin">Types.boolOpArithBin</a></code><br>
+The arithmetic to boolean binary operator
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+a2</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a></code><br>
+The abstract domain of the second operand
+</tr>
+</table>
+</td>
+</tr>
+</table></div>
+
+<pre><span id="VALbaexpUna"><span class="keyword">val</span> baexpUna</span> : <code class="type"><a href="Types.html#TYPEarithOpArithUna">Types.arithOpArithUna</a> -> <a href="Types.html#TYPEabstrD">Types.abstrD</a> -> <a href="Types.html#TYPEabstrD">Types.abstrD</a> -> <a href="Types.html#TYPEabstrD">Types.abstrD</a></code></pre><div class="info ">
+Backward abstract semantics of arithmetic unary operators<br>
+<b>Returns</b> The abstract domain of the operand which satisfied the fact that <code class="code">op</code> <code class="code">a</code> is in <code class="code">p</code> or an over-approximation of it<br>
+</div>
+<div class="param_info"><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+op</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEarithOpArithUna">Types.arithOpArithUna</a></code><br>
+The arithmetic unary operator
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+a</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a></code><br>
+The abstract domain of the operand
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+p</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a></code><br>
+The abstract domain in which we want the result of the operation
+</tr>
+</table>
+</td>
+</tr>
+</table></div>
+
+<pre><span id="VALbaexpBin"><span class="keyword">val</span> baexpBin</span> : <code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a> -><br>       <a href="Types.html#TYPEarithOpArithBin">Types.arithOpArithBin</a> -><br>       <a href="Types.html#TYPEabstrD">Types.abstrD</a> -> <a href="Types.html#TYPEabstrD">Types.abstrD</a> -> <a href="Types.html#TYPEabstrD">Types.abstrD</a> * <a href="Types.html#TYPEabstrD">Types.abstrD</a></code></pre><div class="info ">
+Backward abstract semantics of arithmetic binary operators<br>
+<b>Returns</b> The pair made of the abstract domain for both operands which satistfied the fact that <code class="code">a1</code> <code class="code">op</code> <code class="code">a2</code> is in <code class="code">p</code> or an over-approximation of it<br>
+</div>
+<div class="param_info"><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+a1</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a></code><br>
+The abstract domain of the first operand
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+op</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEarithOpArithBin">Types.arithOpArithBin</a></code><br>
+The arithmetic to boolean binary operator
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+a2</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a></code><br>
+The abstract domain of the second operand
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+p</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a></code><br>
+The abstract domain in which we want the result of the operation
+</tr>
+</table>
+</td>
+</tr>
+</table></div>
+
+<pre><span id="VALwidening"><span class="keyword">val</span> widening</span> : <code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a> -> <a href="Types.html#TYPEabstrD">Types.abstrD</a> -> <a href="Types.html#TYPEabstrD">Types.abstrD</a></code></pre><div class="info ">
+The widening function which ensure termination of lfp<br>
+<b>Returns</b> The abstract domain which is the application of the widening on the abstract domains provided<br>
+</div>
+<div class="param_info"><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+a1</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a></code><br>
+The first abstract domain
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+a2</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEabstrD">Types.abstrD</a></code><br>
+The second abstract domain
+</tr>
+</table>
+</td>
+</tr>
+</table></div>
+</body></html>

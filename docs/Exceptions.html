@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Debug.html">
+<link rel="next" href="GenericAbstract.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Analyser" rel="Chapter" href="Analyser.html">
+<link title="Analysis" rel="Chapter" href="Analysis.html">
+<link title="Debug" rel="Chapter" href="Debug.html">
+<link title="Exceptions" rel="Chapter" href="Exceptions.html">
+<link title="GenericAbstract" rel="Chapter" href="GenericAbstract.html">
+<link title="Options" rel="Chapter" href="Options.html">
+<link title="SortedList" rel="Chapter" href="SortedList.html">
+<link title="SpecialVariables" rel="Chapter" href="SpecialVariables.html">
+<link title="SpecificAbstract" rel="Chapter" href="SpecificAbstract.html">
+<link title="Types" rel="Chapter" href="Types.html">
+<link title="Utils" rel="Chapter" href="Utils.html"><title>Exceptions</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Debug.html" title="Debug">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="GenericAbstract.html" title="GenericAbstract">Next</a>
+</div>
+<h1>Module <a href="type_Exceptions.html">Exceptions</a></h1>
+
+<pre><span class="keyword">module</span> Exceptions: <code class="code">sig</code> <a href="Exceptions.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Module which is used to raise or handle non-fatal exceptions<br>
+</div>
+<hr width="100%">
+<br>
+Module which is used to raise or handle non-fatal exceptions<br>
+
+<pre><code><span id="TYPEexception_type"><span class="keyword">type</span> <code class="type"></code>exception_type</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTexception_type.DIVIDE_BY_ZERO"><span class="constructor">DIVIDE_BY_ZERO</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTexception_type.OVERFLOW"><span class="constructor">OVERFLOW</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTexception_type.PTRINTMATCH"><span class="constructor">PTRINTMATCH</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTexception_type.UNDEFINEDVAR"><span class="constructor">UNDEFINEDVAR</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTexception_type.ALREADYDEFINEDVAR"><span class="constructor">ALREADYDEFINEDVAR</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTexception_type.WRONGSTACKOFFSET"><span class="constructor">WRONGSTACKOFFSET</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTexception_type.WRONGJMP"><span class="constructor">WRONGJMP</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTexception_type.NONEMPTYCALLSTACK"><span class="constructor">NONEMPTYCALLSTACK</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTexception_type.LOCMATCH"><span class="constructor">LOCMATCH</span></span></code></td>
+
+</tr></table>
+
+<div class="info ">
+The possible types of the exceptions<br>
+</div>
+
+
+<pre><span id="TYPEexcept"><span class="keyword">type</span> <code class="type"></code>except</span> = <code class="type"><a href="Exceptions.html#TYPEexception_type">exception_type</a> * <a href="Types.html#TYPEgeneric_stat_loc">Types.generic_stat_loc</a></code> </pre>
+<div class="info ">
+The informations which will be stored about an exception<br>
+</div>
+
+
+<pre><span id="VALexceptions"><span class="keyword">val</span> exceptions</span> : <code class="type"><a href="Exceptions.html#TYPEexcept">except</a> list Pervasives.ref</code></pre><div class="info ">
+The list of the current exceptions<br>
+</div>
+
+<pre><span id="VALexception_type2string"><span class="keyword">val</span> exception_type2string</span> : <code class="type"><a href="Exceptions.html#TYPEexception_type">exception_type</a> -> string</code></pre><div class="info ">
+Give the description of each exception type<br>
+<b>Returns</b> The description of this exception<br>
+</div>
+<div class="param_info"><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+t</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Exceptions.html#TYPEexception_type">exception_type</a></code><br>
+The type of the exception
+</tr>
+</table>
+</td>
+</tr>
+</table></div>
+
+<pre><span id="VALhandleException"><span class="keyword">val</span> handleException</span> : <code class="type"><a href="Exceptions.html#TYPEexception_type">exception_type</a> * <a href="Types.html#TYPEgeneric_stat_loc">Types.generic_stat_loc</a> -> unit</code></pre><div class="info ">
+Handle an exception and print the associated error<br>
+<b>Returns</b> unit<br>
+</div>
+<div class="param_info"><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+except</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Exceptions.html#TYPEexception_type">exception_type</a> * <a href="Types.html#TYPEgeneric_stat_loc">Types.generic_stat_loc</a></code><br>
+
+</tr>
+</table>
+</td>
+</tr>
+</table></div>
+
+<pre><span id="VALraiseException"><span class="keyword">val</span> raiseException</span> : <code class="type"><a href="Exceptions.html#TYPEexception_type">exception_type</a> -> <a href="Types.html#TYPEgeneric_stat_loc">Types.generic_stat_loc</a> -> unit</code></pre><div class="info ">
+Raise an exception<br>
+<b>Returns</b> unit<br>
+</div>
+<div class="param_info"><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+t</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Exceptions.html#TYPEexception_type">exception_type</a></code><br>
+The type of the exception
+</tr>
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+generic_stat</td>
+<td align="center" valign="top">:</td>
+<td><code class="type"><a href="Types.html#TYPEgeneric_stat_loc">Types.generic_stat_loc</a></code><br>
+The located statement in which the exception has been raised
+</tr>
+</table>
+</td>
+</tr>
+</table></div>
+
+<pre><span id="VALhandleExceptions"><span class="keyword">val</span> handleExceptions</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+Handle every exception in chronological order<br>
+<b>Returns</b> unit<br>
+</div>
+<div class="param_info"><table border="0" cellpadding="3" width="100%">
+<tr>
+<td align="left" valign="top" width="1%"><b>Parameters: </b></td>
+<td>
+<table class="paramstable">
+<tr>
+<td align="center" valign="top" width="15%" class="code">
+()</td>
+<td align="center" valign="top">:</td>
+<td><code class="type">unit</code><br>
+
+</tr>
+</table>
+</td>
+</tr>
+</table></div>
+</body></html>

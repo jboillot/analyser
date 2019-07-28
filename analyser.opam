@@ -1,0 +1,13 @@
+opam-version: "2.0.3"
+name: "analyser"
+version: "1.0"
+synopsis: "analyser-jboillot executable"
+description: "Beginning of a static analyser made by J.Boillot"
+maintainer: "Jérôme Boillot <jerome.boillot@ens-lyon.fr"
+authors: "Jérôme Boillot <jerome.boillot@ens-lyon.fr"
+depends: [
+	"dune" {build}
+	"menhir" {>= "20190620"}
+	"zarith" {>= "1.7"}
+	"ocaml" {>= "4.05.0"}
+]

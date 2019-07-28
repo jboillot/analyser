@@ -1,0 +1,6 @@
+main.native
+_build/
+src/.merlin
+analyser.install
+src/_build/
+src/analyser.docdir
