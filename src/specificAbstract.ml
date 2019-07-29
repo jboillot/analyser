@@ -143,7 +143,6 @@ let rec abexpArithBin a1 op a2 : abstrD * abstrD =
     | Eq -> let a3 = meet a1 a2 in (a3, a3)
     | Neq ->
       begin match (a1, a2) with
-        | _ when n12 < n21 || n22 < n11 -> (AbstrBot, AbstrBot)
         | _ when n11 = n12 && n21 = n22 && n11 = n21 -> (AbstrBot, AbstrBot)
         | _ when n11 = n12 && n11 = n21 -> (AbstrD(n11, n12), AbstrD(Z.add n21 Z.one, n22))
         | _ when n11 = n12 && n11 = n22 -> (AbstrD(n11, n12), AbstrD(n21, Z.sub n22 Z.one))

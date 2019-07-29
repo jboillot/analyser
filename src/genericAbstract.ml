@@ -544,7 +544,9 @@ and aPostCBlock (pre_loc, program : loc_stat_c) ~shouldGoBackOnJmp ~f ~callStack
       aPostCBlock (post_loc, t) ~shouldGoBackOnJmp:shouldGoBackOnJmp ~f:f ~callStack:callStack ~lastAsmStack:newAsmStack ~env:env ~context:newContext
 
 and aPostC (l1, stat, l2 : loc * stat_c * loc) ~shouldGoBackOnJmp ~f ~callStack ~lastAsmStack ~env ~context : abstrContext * memoryStack =
-  (* print_endline ("C statement read: " ^ stat_c2string stat ""); *)
+  (* print_context context env;
+     print_memoryStack lastAsmStack;
+     print_endline ("C statement read: " ^ loc2string l1); *)
   lastStat := StatC(l1, stat, l2);
   match context with
   | AbstrContextBot -> (AbstrContextBot, lastAsmStack)
