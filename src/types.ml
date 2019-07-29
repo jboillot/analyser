@@ -78,6 +78,7 @@ and loc_stat_a = loc * (stat_a * loc) list
 and arith_expr = Var of name_var | Deref of arith_expr | Addr of name_var | Cons of Z.t | Interval of Z.t * Z.t
                | ArithArithBinExpr of arith_expr * arithOpArithBin * arith_expr
                | ArithArithUnaExpr of arithOpArithUna * arith_expr
+               | TernaryExpr of bool_expr * arith_expr * arith_expr
 
 (** C boolean expressions *)
 and bool_expr = True | False | BoolBinExpr of bool_expr * boolOpBoolBin * bool_expr

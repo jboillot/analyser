@@ -30,21 +30,22 @@ open Types
 %token PLUS MINUS TIMES DIV
 %token EQUAL
 %token C_INT
-%token IF ELSE WHILE
+%token IF ELSE WHILE FOR
 %token TRUE FALSE
 %token RETURN
 %token AND OR LT LE GT GE EQ NEQ NOT BITNOT ADDR
 %token ASM JMP MOV CALL RET PUSH POP
 %token EAX_REG EBX_REG ECX_REG EDX_REG
 %token LPAREN RPAREN LBRACKET RBRACKET LSTR8BRACKET RSTR8BRACKET
-%token SEMICOLON COMMA COLON AT
+%token SEMICOLON COMMA COLON AT QUESTION
 %token EOF
 
 /* lowest precedence */
+%nonassoc NOT
 %left AND OR
 %left PLUS MINUS
 %left TIMES DIV
-%nonassoc NOT
+%nonassoc QUESTION COLON
 /* highest precedence */
 
 %start main
@@ -75,43 +76,61 @@ arguments:
 c_statement:
 | c_type ID SEMICOLON { Declare($1, $2) }
 | c_type ID EQUAL arith_expr SEMICOLON { DeclareAssign($1, $2, $4) }
-| ID EQUAL arith_expr SEMICOLON { Assign($1, $3) }
-| ID EQUAL ID LPAREN arguments RPAREN SEMICOLON { CallAssignC($1, $3, $5) }
-
-| ID PLUS EQUAL arith_expr SEMICOLON { Assign($1, ArithArithBinExpr(Var($1), Plus, $4)) }
-| ID MINUS EQUAL arith_expr SEMICOLON { Assign($1, ArithArithBinExpr(Var($1), Minus, $4)) }
-| ID MINUS TIMES arith_expr SEMICOLON { Assign($1, ArithArithBinExpr(Var($1), Times, $4)) }
-| ID MINUS DIV arith_expr SEMICOLON { Assign($1, ArithArithBinExpr(Var($1), Div, $4)) }
-
+| c_assignment SEMICOLON { $1 }
 | ASM LBRACKET asm_statement_list RBRACKET SEMICOLON { AsmWithoutLoc($3) }
-| ptr_expr EQUAL arith_expr SEMICOLON { PtrAssign($1, $3) }
-
-| WHILE LPAREN bool_expr RPAREN c_block_with_if { WhileWithoutLoc($3, $5) }
-
+| WHILE LPAREN bool_expr RPAREN c_block { WhileWithoutLoc($3, $5) }
 | RETURN arith_expr SEMICOLON { Return($2) }
 ;
 
-c_block:
+c_assignment:
+| ptr_expr EQUAL arith_expr { PtrAssign($1, $3) }
+| ID EQUAL arith_expr { Assign($1, $3) }
+| ID EQUAL ID LPAREN arguments RPAREN { CallAssignC($1, $3, $5) }
+
+| ID PLUS EQUAL arith_expr { Assign($1, ArithArithBinExpr(Var($1), Plus, $4)) }
+| ID MINUS EQUAL arith_expr { Assign($1, ArithArithBinExpr(Var($1), Minus, $4)) }
+| ID MINUS TIMES arith_expr { Assign($1, ArithArithBinExpr(Var($1), Times, $4)) }
+| ID MINUS DIV arith_expr { Assign($1, ArithArithBinExpr(Var($1), Div, $4)) }
+
+| ID PLUS PLUS { Assign($1, ArithArithBinExpr(Var($1), Plus, Cons(Z.one))) }
+| PLUS PLUS ID { Assign($3, ArithArithBinExpr(Var($3), Plus, Cons(Z.one))) }
+| ID MINUS MINUS { Assign($1, ArithArithBinExpr(Var($1), Minus, Cons(Z.one))) }
+| MINUS MINUS ID { Assign($3, ArithArithBinExpr(Var($3), Minus, Cons(Z.one))) }
+;
+
+c_assignment_list:
+| { [] }
+| c_assignment { [$1] }
+| c_assignment COMMA c_assignment_list { $1::$3 }
+;
+
+c_block_without_if:
 /* I expect 2 shift/reduce conflicts here. It is inevitable but the shift strategy (which is good in this case) will be applied. */
-| c_statement {[$1]}
+| c_statement { [$1] }
+| for_block { $1 }
 | LBRACKET c_statement_list RBRACKET { $2 }
 ;
 
-c_block_with_if:
-| c_block { $1 }
-| IF LPAREN bool_expr RPAREN c_block_with_if else_block { [BranchWithoutLoc($3, $5, $6)] }
+c_block:
+| c_block_without_if { $1 }
+| IF LPAREN bool_expr RPAREN c_block else_block { [BranchWithoutLoc($3, $5, $6)] }
 ;
 
 else_block:
 | { [] }
-| ELSE IF LPAREN bool_expr RPAREN c_block_with_if else_block { [BranchWithoutLoc($4, $6, $7)] }
-| ELSE c_block { $2 }
+| ELSE IF LPAREN bool_expr RPAREN c_block else_block { [BranchWithoutLoc($4, $6, $7)] }
+| ELSE c_block_without_if { $2 }
 ;
 
 c_statement_list:
-| c_statement c_statement_list { $1::$2 }
-| IF LPAREN bool_expr RPAREN c_block_with_if else_block c_statement_list { (BranchWithoutLoc($3, $5, $6))::$7 }
 | { [] }
+| c_statement c_statement_list { $1::$2 }
+| IF LPAREN bool_expr RPAREN c_block else_block c_statement_list { (BranchWithoutLoc($3, $5, $6))::$7 }
+| for_block c_statement_list { $1 @ $2 }
+;
+
+for_block:
+| FOR LPAREN c_assignment_list SEMICOLON bool_expr SEMICOLON c_assignment_list RPAREN c_block { $3 @ [WhileWithoutLoc($5, $9 @ $7)] }
 ;
 
 asm_statement:
@@ -139,6 +158,7 @@ arith_expr:
 | arith_expr MINUS arith_expr { ArithArithBinExpr($1, Minus, $3) }
 | arith_expr TIMES arith_expr { ArithArithBinExpr($1, Times, $3) }
 | arith_expr DIV arith_expr { ArithArithBinExpr($1, Div, $3) }
+| LPAREN bool_expr RPAREN QUESTION arith_expr COLON arith_expr { TernaryExpr($2, $5, $7) }
 ;
 
 constant:

@@ -244,8 +244,27 @@ let rec faexp ~a ~context ~env : abstrD =
       end
     | Addr(vn) when Context.mem vn map -> AbstrPtr(IdSet.add (Context.find vn map) IdSet.empty)
     | Addr(_) -> raiseException UNDEFINEDVAR !lastStat; AbstrBot
+    | TernaryExpr(b, a1, a2) ->
+      let env1 = ref (!env) in
+      let env2 = ref (!env) in
+      let isbImpossible = abexp ~b:b ~context:context ~env:env1 in
+      let isNotbImpossible = abexp ~b:(notBoolExpr b) ~context:context ~env:env1 in
+      if not isbImpossible && not isNotbImpossible then
+        let result = join (faexp ~a:a1 ~context:context ~env:env1) (faexp ~a:a2 ~context:context ~env:env2) in
+        let () = env := !(environmentJoin env1 env2) in
+        result
+      else if not isbImpossible then
+        let result = faexp ~a:a2 ~context:context ~env:env2 in
+        let () = env := !env2 in
+        result
+      else if not isNotbImpossible then
+        let result = faexp ~a:a1 ~context:context ~env:env1 in
+        let () = env := !env1 in
+        result
+      else
+        AbstrBot
 
-let rec baexp ~a ~context ~p ~env : bool =
+and baexp ~a ~context ~p ~env : bool =
   match a with
   | Cons(n) when isInAbstractDomain n p -> false
   | Cons(_) -> true
@@ -282,8 +301,15 @@ let rec baexp ~a ~context ~p ~env : bool =
         meet (AbstrPtr(IdSet.add (Context.find vn map) IdSet.empty)) p = AbstrBot
       | AbstrContext(_) -> raiseException UNDEFINEDVAR !lastStat; false
     end
+  | TernaryExpr(b, a1, a2) ->
+    let env1 = ref (!env) in
+    let env2 = ref (!env) in
+    let p1 = if abexp ~b:b ~context:context ~env:env1 then AbstrBot else faexp ~a:a1 ~context:context ~env:env1 in
+    let p2 = if abexp ~b:(notBoolExpr b) ~context:context ~env:env2 then AbstrBot else faexp ~a:a2 ~context:context ~env:env2 in
+    meet p1 p = AbstrBot && meet p2 p = AbstrBot
 
-let rec abexp ~b ~context ~env : bool =
+
+and abexp ~b ~context ~env : bool =
   match context with
   | AbstrContextBot -> true
   | GoForward(_,_) -> failwith "abexp: I can't handle GoForward contexts!"

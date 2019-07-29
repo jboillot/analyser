@@ -59,8 +59,19 @@ let rec arith_expr2string a : string =
       then "(" ^ arith_expr2string a1 ^ ")"
       else arith_expr2string a1
     end
+  | TernaryExpr(b, a1, a2) ->
+    bool_expr2string b ^ " ? " ^
+    begin if arith_expr_needs_parenthesis a1
+      then "(" ^ arith_expr2string a1 ^ ")"
+      else arith_expr2string a1
+    end
+    ^ " : " ^
+    begin if arith_expr_needs_parenthesis a2
+      then "(" ^ arith_expr2string a2 ^ ")"
+      else arith_expr2string a2
+    end
 
-let rec bool_expr2string b : string =
+and bool_expr2string b : string =
   match b with
   | True -> "true"
   | False -> "false"

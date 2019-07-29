@@ -58,7 +58,6 @@ let analyseProgram (l, program) : unit =
       end
     | _ -> failwith "analyseProgram: no main function found!"
   in
-  print_endline ("\n### Final size of the environment: " ^ string_of_int (Environment.cardinal !env));
   print_endline "\n### Final context:";
   print_context endContext env;
   print_endline "\n### Return code:";

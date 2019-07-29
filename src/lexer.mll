@@ -50,6 +50,7 @@ rule initial = parse
 | "if" { IF }
 | "else" { ELSE }
 | "while" { WHILE }
+| "for" { FOR }
 | "return" { RETURN }
 | "&&" { AND }
 | "||" { OR }
@@ -60,6 +61,7 @@ rule initial = parse
 | ">" { GT }
 | ">=" { GE }
 | "!" { NOT }
+| "?" { QUESTION }
 | "asm" { ASM }
 | "eax" { EAX_REG }
 | "ebx" { EBX_REG }
