@@ -60,7 +60,7 @@ let rec arith_expr2string a : string =
       else arith_expr2string a1
     end
   | TernaryExpr(b, a1, a2) ->
-    bool_expr2string b ^ " ? " ^
+    "(" ^ bool_expr2string b ^ ") ? " ^
     begin if arith_expr_needs_parenthesis a1
       then "(" ^ arith_expr2string a1 ^ ")"
       else arith_expr2string a1

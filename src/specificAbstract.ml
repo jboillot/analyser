@@ -143,11 +143,12 @@ let rec abexpArithBin a1 op a2 : abstrD * abstrD =
     | Eq -> let a3 = meet a1 a2 in (a3, a3)
     | Neq ->
       begin match (a1, a2) with
-        | (AbstrD(n11, n12), AbstrD(n21, n22)) when n11 = n12 && n21 = n22 && n11 = n21 -> (AbstrBot, AbstrBot)
-        | (AbstrD(n11, n12), AbstrD(n21, n22)) when n11 = n12 && n11 = n21 -> (AbstrD(n11, n12), AbstrD(Z.add n21 Z.one, n22))
-        | (AbstrD(n11, n12), AbstrD(n21, n22)) when n11 = n12 && n11 = n22 -> (AbstrD(n11, n12), AbstrD(n21, Z.sub n22 Z.one))
-        | (AbstrD(n11, n12), AbstrD(n21, n22)) when n21 = n22 && n11 = n21 -> (AbstrD(Z.add n11 Z.one, n12), AbstrD(n21, n22))
-        | (AbstrD(n11, n12), AbstrD(n21, n22)) when n21 = n22 && n12 = n21 -> (AbstrD(n11, Z.sub n12 Z.one), AbstrD(n21, n22))
+        | _ when n12 < n21 || n22 < n11 -> (AbstrBot, AbstrBot)
+        | _ when n11 = n12 && n21 = n22 && n11 = n21 -> (AbstrBot, AbstrBot)
+        | _ when n11 = n12 && n11 = n21 -> (AbstrD(n11, n12), AbstrD(Z.add n21 Z.one, n22))
+        | _ when n11 = n12 && n11 = n22 -> (AbstrD(n11, n12), AbstrD(n21, Z.sub n22 Z.one))
+        | _ when n21 = n22 && n11 = n21 -> (AbstrD(Z.add n11 Z.one, n12), AbstrD(n21, n22))
+        | _ when n21 = n22 && n12 = n21 -> (AbstrD(n11, Z.sub n12 Z.one), AbstrD(n21, n22))
         | _ -> (a1, a2)
       end
     | Lt -> (meet (AbstrD(n11, min n12 (Z.sub n22 Z.one))) a1), (meet (AbstrD(max (Z.add n11 Z.one) n21, n22)) a2)

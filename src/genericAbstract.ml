@@ -254,12 +254,12 @@ let rec faexp ~a ~context ~env : abstrD =
         let () = env := !(environmentJoin env1 env2) in
         result
       else if not isbImpossible then
-        let result = faexp ~a:a2 ~context:context ~env:env2 in
-        let () = env := !env2 in
-        result
-      else if not isNotbImpossible then
         let result = faexp ~a:a1 ~context:context ~env:env1 in
         let () = env := !env1 in
+        result
+      else if not isNotbImpossible then
+        let result = faexp ~a:a2 ~context:context ~env:env2 in
+        let () = env := !env2 in
         result
       else
         AbstrBot
@@ -268,8 +268,7 @@ and baexp ~a ~context ~p ~env : bool =
   match a with
   | Cons(n) when isInAbstractDomain n p -> false
   | Cons(_) -> true
-  | Interval(n1, n2) when isInAbstractDomain n1 p && isInAbstractDomain n2 p -> false
-  | Interval(_, _) -> true
+  | Interval(n1, n2) -> meet (AbstrD(n1, n2)) p = AbstrBot
   | Var(vn) ->
     begin match context with
       | AbstrContext(map) when Context.mem vn map ->
@@ -306,7 +305,7 @@ and baexp ~a ~context ~p ~env : bool =
     let env2 = ref (!env) in
     let p1 = if abexp ~b:b ~context:context ~env:env1 then AbstrBot else faexp ~a:a1 ~context:context ~env:env1 in
     let p2 = if abexp ~b:(notBoolExpr b) ~context:context ~env:env2 then AbstrBot else faexp ~a:a2 ~context:context ~env:env2 in
-    meet p1 p = AbstrBot && meet p2 p = AbstrBot
+    meet p1 p = AbstrBot || meet p2 p = AbstrBot
 
 
 and abexp ~b ~context ~env : bool =
@@ -329,6 +328,7 @@ and abexp ~b ~context ~env : bool =
       contextBot
     | BoolUnaExpr(op, b1) ->
       match op with Not -> abexp ~b:(notBoolExpr b1) ~context:context ~env:env
+
 
 let rec matchCArgs ~args_def ~args ~contextToEnhance ~context ~env : abstrContext =
   match (args_def, args) with
