@@ -1,6 +1,6 @@
 # Analyser
 
-Analyser is a little and without warranty program which performs a static interpretation of simple C programs with inline assembly in order to find errors or undefined behaviours in a finite time. It has been made during the internship of Jérôme Boillot at the end of his bachelor in the ANTIQUE team located in the ENS in Paris under the direction of [Marc Chevalier](https://marc-chevalier.com/) and [Jérôme Ferret](https://www.di.ens.fr/~feret/).
+Analyser is a little and without warranty program which performs a static interpretation of simple C programs with inline assembly in order to find errors or undefined behaviours in a finite time. It has been made during the internship of Jérôme Boillot at the end of his bachelor in the ANTIQUE team located in the ENS in Paris under the direction of [Marc Chevalier](https://marc-chevalier.com/) and [Jérôme Feret](https://www.di.ens.fr/~feret/).
 The documentation of this analyser is available [here](https://jboillot.github.io/analyser/).
 
 ## Built with
